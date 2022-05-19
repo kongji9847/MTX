@@ -10,13 +10,13 @@ class Genre(models.Model):
 
 class Movie(models.Model):
     title = models.CharField(max_length=100)
-    overview = models.TextField()
-    poster_path = models.TextField()
-    tmdb_id = models.IntegerField()
-    release_date = models.DateField()
-    popularity = models.FloatField()
-    vote_average = models.FloatField()
-    vote_count = models.IntegerField()
+    overview = models.TextField(blank=True)
+    poster_path = models.TextField(blank=True)
+    tmdb_id = models.IntegerField(blank=True)
+    release_date = models.DateField(blank=True)
+    popularity = models.FloatField(blank=True)
+    vote_average = models.FloatField(blank=True)
+    vote_count = models.IntegerField(blank=True)
     genre_ids = models.ManyToManyField(Genre, related_name='movies')
 
 
