@@ -29,7 +29,7 @@ def genres(request):
 def movies(request):
     base_url = "https://api.themoviedb.org/3/movie/popular"
     api_key = '59333005f9e5cef30c53f778017c2676'
-    for page in range(1, 26):
+    for page in range(76, 101):
         params = {
         'api_key' : api_key,
         'language': 'ko',
