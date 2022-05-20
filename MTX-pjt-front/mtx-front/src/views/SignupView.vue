@@ -2,6 +2,8 @@
   <div>
     <h1>Signup</h1>
     
+    <account-error-list v-if="authError"></account-error-list>
+
     <form @submit.prevent="signup(credential)">
       <div>
         <label for="username">Username: </label>
@@ -24,11 +26,12 @@
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
-  // import AccountErrorList from '@/components/AccountErrorList.vue'
+  import AccountErrorList from '@/components/AccountErrorList.vue'
+
   export default {
     name: 'SignupView',
     components: {
-      // AccountErrorList,
+      AccountErrorList,
     },
     data() {
       return {

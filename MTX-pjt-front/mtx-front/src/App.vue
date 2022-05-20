@@ -7,9 +7,9 @@
 </template>
 
 <script>
-  import NavBar from '@/components/NavBar.vue'
+import NavBar from '@/components/NavBar.vue'
 
-  import { mapActions } from 'vuex'
+import { mapActions } from 'vuex'
 
   export default {
     name: 'App',

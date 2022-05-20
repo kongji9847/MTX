@@ -5,28 +5,31 @@ import drf from '@/api/drf'
 
 export default {
   state: {
-    token: localStorage.getItem('token') || '',
+    token: localStorage.getItem('token') || '' ,
     currentUser: {},
     authError: null,
   },
+
   getters: {
     isLoggedIn: state => !!state.token,
     currentUser: state => state.currentUser,
     authError: state => state.authError,
-    authHeader: state => ({ Authorization: `Token ${state.toekn}`})
+    authHeader: state => ({ Authorization: `Token ${state.token}`})
   },
+
   mutations: {
     SET_TOKEN: (state, token) => state.token = token,
     SET_CURRENT_USER: (state, user) => state.currentUser = user,
     SET_AUTH_ERROR: (state, error) => state.authError = error
   },
+
   actions: {
     saveToken({ commit }, token) {
       commit('SET_TOKEN', token)
       localStorage.setItem('token', token)
     },
 
-    removeToekn({ commit }) {
+    removeToken({ commit }) {
       commit('SET_TOKEN', '')
       localStorage.setItem('token', '')
     },
@@ -38,16 +41,29 @@ export default {
         data: credentials
       })
       .then(res => {
-        console.log(res)
-        console.log(res.data)
         const token = res.data.key
         dispatch('saveToken', token)
         dispatch('fetchCurrentUser')
-        router.push({ name: 'movies' })
+        router.push({ name: 'wordChain' })
       })
       .catch(err => {
-        console.error(err)
-        console.error(err.response)
+        commit('SET_AUTH_ERROR', err.response.data)
+      })
+    },
+
+    login({ commit, dispatch }, credentials) {
+      axios ({
+        url: drf.accounts.login(),
+        method: 'post',
+        data: credentials
+      })
+      .then(res => {
+        const token = res.data.key
+        dispatch('saveToken', token)
+        dispatch('fetchCurrentUser')
+        router.push({ name: 'wordChain' })
+      })
+      .catch(err => {
         commit('SET_AUTH_ERROR', err.response.data)
       })
     },
@@ -63,7 +79,7 @@ export default {
         .catch(err => {
           if (err.response.status === 401) {
             dispatch('removeToken')
-            // router.push({ name: 'login' })
+            router.push({ name: 'login' })
           }
         })
       }
