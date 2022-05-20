@@ -68,6 +68,22 @@ export default {
       })
     },
 
+    logout({ getters, dispatch }) {
+      axios({
+        url: drf.accounts.logout(),
+        method: 'post',
+        headers: getters.authHeader,
+      })
+      .then(() => {
+        dispatch('removeToken')
+        alert('logout 되었습니다')
+        router.push({ name: 'login' })
+      })
+      .error(err => {
+        console.error(err.response)
+      })
+    },
+
     fetchCurrentUser({ commit, getters, dispatch }) {
       if (getters.isLoggedIn) {
         axios({
