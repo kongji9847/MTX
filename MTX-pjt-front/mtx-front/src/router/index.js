@@ -3,6 +3,9 @@ import VueRouter from 'vue-router'
 // import store from '../store'
 
 import SignupView from '@/views/SignupView.vue'
+import LoginView from '@/views/LoginView.vue'
+
+import WordChainView from '@/views/WordChainView.vue'
 
 Vue.use(VueRouter)
 
@@ -11,6 +14,16 @@ const routes = [
     path: '/signup',
     name: 'signup',
     component: SignupView,
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: LoginView,
+  },
+  {
+    path: '/movies',
+    name: 'wordChain',
+    component: WordChainView,
   },
 ]
 

@@ -2,6 +2,12 @@
   <nav>
     <ul>
       <li>
+        <router-link :to="{ name: 'wordChain' }">Home</router-link>
+      </li>
+      <li v-if="!isLoggedIn">
+        <router-link :to=" { name: 'login' }">Login</router-link>
+      </li>
+      <li v-if="!isLoggedIn">
         <router-link :to="{ name: 'signup' }">Signup</router-link>
       </li>
     </ul>
@@ -14,7 +20,7 @@
   export default {
     name: 'NavBar',
     computed: {
-      ...mapGetters(['currentUser']),
+      ...mapGetters(['currentUser', 'isLoggedIn']),
       username() {
         return this.currentUser.username ? this.currentUser.username : 'guest'
       },
