@@ -6,7 +6,7 @@ from rest_framework import status
 
 from rest_framework.permissions import IsAuthenticated
 
-from .Serializers.movie import MovieSerializer, MovieDetailSerializer
+from .Serializers.movie import MovieSerializer, MovieDetailSerializer, MovieSearchSerializer
 from .Serializers.review import RateSerializer, ReviewSerializer, ReviewDetailSerializer, CommentSerializer, CommentDetailSerializer, RateChangeSerializer
 from .models import Movie, Review, Comment, Rate
 
@@ -148,4 +148,12 @@ def rate(request, movie_pk):
             serializer2.save(movie=movie, user=user)
             return Response(serializer2.data)
 
-
+@api_view(['GET'])
+def search(request):
+    keyword = request.GET["keyword"]
+    movies = Movie.objects.filter(title__contains=keyword)
+    if not movies:
+        return Response({'error': '해당 제목의 영화가 없습니다!ㅜㅜ'}, status=status.HTTP_404_NOT_FOUND)
+    
+    serializer = MovieSearchSerializer(movies, many=True)
+    return Response(serializer.data)

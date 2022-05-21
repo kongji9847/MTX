@@ -27,4 +27,7 @@ urlpatterns = [
 
     # 평점 반영
     path('<int:movie_pk>/rate/', views.rate),
+
+    # 영화 검색
+    path('search/', views.search),
 ]

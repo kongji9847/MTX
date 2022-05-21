@@ -15,6 +15,11 @@ import { mapActions } from 'vuex'
         word: '',
       }
     },
+    computed: {
+      last_word: function() {
+        return this.word.slice(-1)
+      }
+    },
     methods: {
       ...mapActions(['inputSearch']),
       onSubmit() {

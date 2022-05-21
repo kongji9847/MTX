@@ -37,3 +37,8 @@ class MovieDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Movie
         fields = '__all__'
+
+class MovieSearchSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Movie
+        fields = ('pk', 'title',)
