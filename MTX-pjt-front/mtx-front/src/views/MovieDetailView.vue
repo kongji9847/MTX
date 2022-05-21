@@ -7,6 +7,8 @@
     <p>개봉 일자: {{ movie.release_date}}</p>
     <p>평점: {{ movie.vote_average }}</p>
     <p>장르: {{ movie.genre_ids }}</p>
+    <button @click="prevMovie">Back</button>
+    <button @click="nextMovie(movie.last_word)">Next</button>
   </div>
 </template>
 
@@ -24,11 +26,8 @@ import { mapGetters, mapActions } from 'vuex'
       ...mapGetters(['isAuthor', 'movie']),
     },
     methods: {
-      ...mapActions(['fetchMovie',])
+      ...mapActions(['fetchMovie', 'nextMovie', 'prevMovie']),
     },
-    // created() {
-    //   this.fetchMovie(this.moviePk)
-    // }
   }
 </script>
 

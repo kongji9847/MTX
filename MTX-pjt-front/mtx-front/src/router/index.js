@@ -34,6 +34,11 @@ const routes = [
     name: 'profile',
     component: ProfileView,
   },
+  // {
+  //   path: '/',
+  //   name: 'home',
+  //   component: HomeView
+  // },
   {
     path: '/movies',
     name: 'wordChain',

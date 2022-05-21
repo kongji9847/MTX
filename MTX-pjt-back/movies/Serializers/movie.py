@@ -10,7 +10,8 @@ class GenreSerializer(serializers.ModelSerializer):
 # 영화 끝말잇기 후 보여줄 내용
 
 class MovieSerializer(serializers.Serializer):
-
+    
+    id = serializers.IntegerField()
     title = serializers.CharField(max_length=100)
     overview = serializers.CharField(allow_blank=True)
     release_date = serializers.DateField()
