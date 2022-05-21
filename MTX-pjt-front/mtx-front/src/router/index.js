@@ -10,7 +10,7 @@ import NotFound404 from '@/views/NotFound404.vue'
 
 import WordChainStartView from '@/views/WordChainStartView.vue'
 import WordChainView from '@/views/WordChainView'
-// import MovieDetailView from '@/views/MovieDetailView.vue'
+import MovieDetailView from '@/views/MovieDetailView.vue'
 
 Vue.use(VueRouter)
 
@@ -35,11 +35,11 @@ const routes = [
     name: 'profile',
     component: ProfileView,
   },
-  // {
-  //   path: '/',
-  //   name: 'home',
-  //   component: HomeView
-  // },
+  {
+    path: '/',
+    name: 'home',
+    component: HomeView
+  },
   {
     path: '/movies',
     name: 'wordChainStart',
@@ -49,6 +49,11 @@ const routes = [
     path: '/movies/word-chain',
     name: 'wordChain',
     component: WordChainView,
+  },
+  {
+    path: '/movies/:movieId',
+    name: 'movie',
+    component: MovieDetailView,
   },
   {
     path: '/404',
