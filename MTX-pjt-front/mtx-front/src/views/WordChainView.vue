@@ -17,7 +17,7 @@
 import { mapGetters, mapActions } from 'vuex'
 
   export default {
-    name: 'MovieDetailView',
+    name: 'WordChainView',
     computed: {
       ...mapGetters(['isAuthor', 'movie']),
     },
@@ -30,6 +30,14 @@ import { mapGetters, mapActions } from 'vuex'
         })
       }
     },
+    // word-chain url 상태에서 새로고침하면 출발 페이지로 넘어간다.
+    created() {
+      if (!Object.keys(this.movie).length) {
+        this.$router.push({
+          name: 'wordChainStart'
+        })
+      }
+    }
   }
 </script>
 

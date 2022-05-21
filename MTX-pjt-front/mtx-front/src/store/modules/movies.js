@@ -13,8 +13,7 @@ export default {
     // movie 디테일
     movieDetail: {},
 
-    inputValue: '',
-    ranked_movies: [],
+    // ranked_movies: [],
     // reviews: [],
     // review: [],
   },
@@ -25,18 +24,16 @@ export default {
     movieDetail: state => state.movieDetail,
 
 
-    ranked_movies: state => state.ranked_movies,
+    // ranked_movies: state => state.ranked_movies,
     // reviews: state => state.reviews,
     // review: state => state.review,
-    isAuthor: (state, getters) => {
-      return state.review.user?.username === getters.currentUser.username
-    },
+    // isAuthor: (state, getters) => {
+    //   return state.review.user?.username === getters.currentUser.username
+    // },
     // isReview: state => !_.isEmpty(state.article),
   },
 
   mutations: {
-    SET_INPUTVALUE: (state, inputValue) => state.inputValue = inputValue,
-    
     SET_MOVIE: (state, movie) => {
       state.movie = movie
       state.movieList.push(movie)
@@ -55,15 +52,13 @@ export default {
   },
 
   actions: {
-    inputSearch({ commit, state }, word) {
-      state.inputValue = word.slice(-1)
-      const params = {
-        "start_word": state.inputValue
-      }
+    inputSearch({ commit }, last_word) {
       axios({
         url: drf.movies.wordChain(),
         method: 'get',
-        params: params,
+        params: {
+          "start_word": last_word
+        },
       })
       .then(res => {
         commit('SET_MOVIE', res.data)

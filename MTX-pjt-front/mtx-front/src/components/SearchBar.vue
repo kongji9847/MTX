@@ -1,7 +1,7 @@
 <template>
   <div class="search-bar">
-    <input v-model="word" @keyup.enter="onSubmit" type="text" placeholder="Search">
-    <button @click="onSubmit" class="btn">출발</button>
+    <input v-model="word" @keyup.enter="inputSearch(last_word)" type="text" placeholder="Search">
+    <button @click="inputSearch(last_word)" class="btn">출발</button>
   </div>
 </template>
 
@@ -22,9 +22,6 @@ import { mapActions } from 'vuex'
     },
     methods: {
       ...mapActions(['inputSearch']),
-      onSubmit() {
-        this.inputSearch(this.word)
-      }
     }
   }
 </script>
