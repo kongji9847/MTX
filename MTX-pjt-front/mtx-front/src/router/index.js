@@ -8,6 +8,7 @@ import LogoutView from '@/views/LogoutView.vue'
 import ProfileView from '@/views/ProfileView.vue'
 import NotFound404 from '@/views/NotFound404.vue'
 
+import HomeView from '@/views/HomeView.vue'
 import WordChainStartView from '@/views/WordChainStartView.vue'
 import WordChainView from '@/views/WordChainView'
 import MovieDetailView from '@/views/MovieDetailView.vue'
