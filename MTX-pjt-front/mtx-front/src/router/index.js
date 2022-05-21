@@ -9,6 +9,7 @@ import ProfileView from '@/views/ProfileView.vue'
 import NotFound404 from '@/views/NotFound404.vue'
 
 import WordChainView from '@/views/WordChainView.vue'
+import MovieDetailView from '@/views/MovieDetailView.vue'
 
 Vue.use(VueRouter)
 
@@ -37,6 +38,11 @@ const routes = [
     path: '/movies',
     name: 'wordChain',
     component: WordChainView,
+  },
+  {
+    path: '/movies/:moviePk',
+    name: 'movie',
+    component: MovieDetailView,
   },
   {
     path: '/404',

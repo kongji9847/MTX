@@ -15,7 +15,7 @@ export default {
     profile: username => HOST + ACCOUNTS + 'profile/' + username,
   },
   movies: {
-    wordChain: () => HOST + MOVIES,
+    wordChain: () => HOST + MOVIES + 'word-chain/',
     movie: moviePk => HOST + MOVIES + `${moviePk}`,
     reviews: () => HOST + MOVIES + REVIEWS,
     newReview: moviePk => HOST + MOVIES + `${moviePk}` + REVIEWS,
