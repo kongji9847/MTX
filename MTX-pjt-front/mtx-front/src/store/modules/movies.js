@@ -32,11 +32,10 @@ export default {
   actions: {
     inputSearch({ commit, state, getters }, word) {
       state.inputValue = word.slice(-1)
-
       const params = {
         "start_word": state.inputValue
       }
-      
+
       axios({
         url: drf.movies.wordChain(),
         method: 'get',
