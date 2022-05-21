@@ -24,7 +24,6 @@ export default {
 
   actions: {
     fetchReviews({ commit, getters }) {
-      console.log(getters.authHeader)
       axios({
         url: drf.movies.reviews(),
         method: 'get',
@@ -36,7 +35,7 @@ export default {
 
     fetchReview({ commit, getters }, reviewPk) {
       axios({
-        url: drf.movies.reviews(reviewPk),
+        url: drf.movies.review(reviewPk),
         method: 'get',
         headers: getters.authHeader,
       })
