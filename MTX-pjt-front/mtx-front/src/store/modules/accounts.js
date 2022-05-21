@@ -8,19 +8,22 @@ export default {
     token: localStorage.getItem('token') || '' ,
     currentUser: {},
     authError: null,
+    profile: {},
   },
 
   getters: {
     isLoggedIn: state => !!state.token,
     currentUser: state => state.currentUser,
     authError: state => state.authError,
-    authHeader: state => ({ Authorization: `Token ${state.token}`})
+    authHeader: state => ({ Authorization: `Token ${state.token}`}),
+    profile: state => state.profile,
   },
 
   mutations: {
     SET_TOKEN: (state, token) => state.token = token,
     SET_CURRENT_USER: (state, user) => state.currentUser = user,
-    SET_AUTH_ERROR: (state, error) => state.authError = error
+    SET_AUTH_ERROR: (state, error) => state.authError = error,
+    SET_PROFILE: (state, profile) => state.profile = profile,
   },
 
   actions: {
@@ -79,8 +82,9 @@ export default {
         alert('logout 되었습니다')
         router.push({ name: 'login' })
       })
-      .error(err => {
-        console.error(err.response)
+      // 에러 발생 시 어떻게 할 지 고민해야 함
+      .catch(err => {
+        console.log(err.response)
       })
     },
 
@@ -99,7 +103,23 @@ export default {
           }
         })
       }
-    }
+    },
+
+    fetchProfile({ commit, getters }, { username }) {
+      axios({
+        url: drf.accounts.profile(username),
+        method: 'get',
+        headers: getters.authHeader,
+      })
+      .then(res => {
+        commit('SET_PROFILE', res.data)
+      })
+      .catch(err => {
+        if (err.response.statue === 404) {
+          router.push({ name: 'NotFound404' })
+        }
+      })
+    },
 
   },
   modules: {
