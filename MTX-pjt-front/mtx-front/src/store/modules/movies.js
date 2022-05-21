@@ -2,7 +2,7 @@ import router from '@/router'
 import axios from 'axios'
 import drf from '@/api/drf'
 
-import _ from 'lodash'
+// import _ from 'lodash'
 
 export default {
   state: {
@@ -13,20 +13,20 @@ export default {
 
     inputValue: '',
     ranked_movies: [],
-    reviews: [],
-    review: [],
+    // reviews: [],
+    // review: [],
   },
 
   getters: {
     movieList: state => state.movieList,
     movie: state => state.movie,
     ranked_movies: state => state.ranked_movies,
-    reviews: state => state.reviews,
-    review: state => state.review,
+    // reviews: state => state.reviews,
+    // review: state => state.review,
     isAuthor: (state, getters) => {
       return state.review.user?.username === getters.currentUser.username
     },
-    isReview: state => !_.isEmpty(state.article),
+    // isReview: state => !_.isEmpty(state.article),
   },
 
   mutations: {
