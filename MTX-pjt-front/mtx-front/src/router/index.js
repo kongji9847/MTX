@@ -8,8 +8,9 @@ import LogoutView from '@/views/LogoutView.vue'
 import ProfileView from '@/views/ProfileView.vue'
 import NotFound404 from '@/views/NotFound404.vue'
 
-import WordChainView from '@/views/WordChainView.vue'
-import MovieDetailView from '@/views/MovieDetailView.vue'
+import WordChainStartView from '@/views/WordChainStartView.vue'
+import WordChainView from '@/views/WordChainView'
+// import MovieDetailView from '@/views/MovieDetailView.vue'
 
 Vue.use(VueRouter)
 
@@ -41,13 +42,13 @@ const routes = [
   // },
   {
     path: '/movies',
-    name: 'wordChain',
-    component: WordChainView,
+    name: 'wordChainStart',
+    component: WordChainStartView,
   },
   {
-    path: '/movies/:moviePk',
-    name: 'movie',
-    component: MovieDetailView,
+    path: '/movies/word-chain',
+    name: 'wordChain',
+    component: WordChainView,
   },
   {
     path: '/404',

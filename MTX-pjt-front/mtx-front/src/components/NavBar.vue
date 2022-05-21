@@ -2,7 +2,7 @@
   <nav>
     <ul>
       <li>
-        <router-link :to="{ name: 'wordChain' }">Home</router-link>
+        <router-link :to="{ name: 'wordChainStart' }">Home</router-link>
       </li>
       <li v-if="!isLoggedIn">
         <router-link :to=" { name: 'login' }">Login</router-link>

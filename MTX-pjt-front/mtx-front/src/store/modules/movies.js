@@ -37,17 +37,16 @@ export default {
     },
     REMOVE_MOVIE: (state) => {
       state.movieList.pop()
-      state.movie = state.movieList[state.movieList.length-1]
+      state.movie = state.movieList[state.movieList.length - 1]
     }
   },
 
   actions: {
-    inputSearch({ commit, state, getters }, word) {
+    inputSearch({ commit, state }, word) {
       state.inputValue = word.slice(-1)
       const params = {
         "start_word": state.inputValue
       }
-
       axios({
         url: drf.movies.wordChain(),
         method: 'get',
@@ -56,8 +55,7 @@ export default {
       .then(res => {
         commit('SET_MOVIE', res.data)
         router.push({
-          name: 'movie',
-          params: { moviePk: getters.movie.id }
+          name: 'wordChain',
         })
       })
       .catch(err => {
@@ -80,7 +78,8 @@ export default {
       })
     },
 
-    nextMovie({commit, state}, start_word) {
+    // 영화 끝말잇기 next 로직
+    nextMovie({commit}, start_word) {
       axios({
         url: drf.movies.wordChain(),
         method: 'get',
@@ -90,30 +89,24 @@ export default {
       })
       .then((res) => {
         commit('SET_MOVIE', res.data)
-        router.push({
-          name: 'movie',
-          params: { moviePk: state.movie.id}
-        })
       })
       .catch(error => {
         alert(`${start_word}(으)로 시작하는 영화가 없습니다!`)
         console.log(error)
       })
     },
+
+    // 영화 끝말잇기 back 로직
     prevMovie({commit, state}) {
       if (state.movieList.length > 1) {
         commit('REMOVE_MOVIE')
-        router.push({
-        name: 'movie',
-        params: { moviePk: state.movie.id }
-        })
       } else {
         alert('돌아갈 영화가 없습니다!')
-        router.push({
-          name: 'wordChain'
-        })
+        // router.push({
+        //   name: 'wordChainStart'
+        // })
       }
-    }
+    },
     
   },
   modules: {
