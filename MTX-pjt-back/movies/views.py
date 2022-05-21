@@ -34,7 +34,7 @@ def movie_detail(request, movie_pk):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def review_list(request):
-    reviews = get_list_or_404(Review)
+    reviews = Review.objects.all()
     serializer = ReviewSerializer(reviews, many=True)
     return Response(serializer.data)
 
@@ -76,7 +76,7 @@ def review_detail(request, review_pk):
             }
             return Response(message, status=status.HTTP_204_NO_CONTENT)
     
-    return Response({"error": "당신은 작성자가 아닙니다!"})
+    return Response({"error": "당신은 작성자가 아닙니다!"}, status=status.HTTP_406_NOT_ACCEPTABLE)
 
 
 # 댓글 달기
@@ -113,7 +113,7 @@ def comment(request, review_pk, comment_pk):
             }
             return Response(message, status=status.HTTP_204_NO_CONTENT)
     
-    return Response({"error": "당신은 댓글 작성자가 아닙니다!"})
+    return Response({"error": "당신은 댓글 작성자가 아닙니다!"}, status=status.HTTP_406_NOT_ACCEPTABLE)
 
 # 로그인한 사용자
 # 한번 평점을 날렸으면 다음은 평점 날릴 수 없다.
@@ -122,9 +122,9 @@ def comment(request, review_pk, comment_pk):
 def rate(request, movie_pk):
     movie = get_object_or_404(Movie, pk=movie_pk)
     user = request.user
-
+    
     if user.rate_set.filter(movie=movie_pk):
-        return Response({"error": "이미 평점을 남겼습니다!"})
+        return Response({"error": "이미 평점을 남겼습니다!"}, status=status.HTTP_403_FORBIDDEN)
 
 
     score = request.data.get("score")    

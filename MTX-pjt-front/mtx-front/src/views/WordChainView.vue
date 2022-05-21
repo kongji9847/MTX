@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{ movie.title }}</h1>
-    <img :src="movie.poster_path" alt="movie.title" height="300px">
+    <img :src="movie.poster_path" alt="movie.title" height="300px" @click="goDetail">
     <p>줄거리: {{ movie.overview }}</p>
     <p>개봉 일자: {{ movie.release_date}}</p>
     <p>평점: {{ movie.vote_average }}</p>
@@ -15,6 +15,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+
   export default {
     name: 'MovieDetailView',
     computed: {
@@ -22,6 +23,12 @@ import { mapGetters, mapActions } from 'vuex'
     },
     methods: {
       ...mapActions(['fetchMovie', 'nextMovie', 'prevMovie']),
+      goDetail : function () {
+        this.$router.push({
+          name: 'movie',
+          params: { movieId: this.movie.id},
+        })
+      }
     },
   }
 </script>

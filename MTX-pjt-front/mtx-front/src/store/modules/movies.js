@@ -10,6 +10,8 @@ export default {
     movieList: [],
     // 현재 movie
     movie: {},
+    // movie 디테일
+    movieDetail: {},
 
     inputValue: '',
     ranked_movies: [],
@@ -20,6 +22,9 @@ export default {
   getters: {
     movieList: state => state.movieList,
     movie: state => state.movie,
+    movieDetail: state => state.movieDetail,
+
+
     ranked_movies: state => state.ranked_movies,
     // reviews: state => state.reviews,
     // review: state => state.review,
@@ -31,6 +36,7 @@ export default {
 
   mutations: {
     SET_INPUTVALUE: (state, inputValue) => state.inputValue = inputValue,
+    
     SET_MOVIE: (state, movie) => {
       state.movie = movie
       state.movieList.push(movie)
@@ -38,6 +44,13 @@ export default {
     REMOVE_MOVIE: (state) => {
       state.movieList.pop()
       state.movie = state.movieList[state.movieList.length - 1]
+    },
+    SET_MOVIE_DETAIL: (state, movie) => {
+      state.movieDetail = movie
+    },
+    SET_MOVIE_RATE: (state, rateData) => {
+      state.movieDetail.vote_average = rateData.vote_average
+      state.movie.vote_average = rateData.vote_average
     }
   },
 
@@ -107,6 +120,38 @@ export default {
         // })
       }
     },
+
+    movieDetail({commit}, movieId) {
+      axios({
+        url: drf.movies.movie(movieId),
+        method: 'get'
+      })
+      .then(res => {
+        commit('SET_MOVIE_DETAIL', res.data)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    },
+
+    movieRate({state, commit, getters}, score) {
+      console.log(score)
+      console.log(getters.authHeader)
+      axios({
+        url: drf.movies.rate(state.movieDetail.id),
+        method: 'post',
+        headers: getters.authHeader,
+        data: {
+          "score": score
+        }
+      })
+      .then(res => {
+        commit('SET_MOVIE_RATE', res.data)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    }
     
   },
   modules: {
