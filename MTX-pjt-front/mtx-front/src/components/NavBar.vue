@@ -1,29 +1,14 @@
 <template>
-  <nav>
-    <ul>
-      <li>
-        <router-link :to="{ name: 'wordChainStart' }">Home</router-link>
-      </li>
-      <li>
-        <router-link :to="{ name: 'reviews' }">Review</router-link>
-      </li>
-      <li v-if="!isLoggedIn">
-        <router-link :to=" { name: 'login' }">Login</router-link>
-      </li>
-      <li v-if="!isLoggedIn">
-        <router-link :to="{ name: 'signup' }">Signup</router-link>
-      </li>
-
-      <li v-if="isLoggedIn">
-        <router-link :to="{ name: 'profile', params: { username } }">
-          <!-- {{ currentUser.username }}의 프로필 -->
-          My Page
-        </router-link>
-      </li>
-      <li v-if="isLoggedIn">
-        <router-link :to="{ name: 'logout' }">Logout</router-link>
-      </li>
-    </ul>
+  <nav class="container">
+    <h4 class="items">
+      <router-link :to="{ name: 'wordChainStart' }">Home  </router-link>
+    </h4>
+    <h4 class="items">
+      <router-link :to="{ name: 'reviews' }">Review  </router-link>
+    </h4>
+    <h4 v-if="isLoggedIn" class="items">
+      <router-link :to="{ name: 'profile', params: { username } }">My Page</router-link>
+    </h4>
   </nav>
 </template>
 
@@ -41,6 +26,15 @@
   }
 </script>
 
-<style>
+<style scoped>
+.container {
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+  }
 
+.items {
+  width: 10%;
+  text-align: left;
+}
 </style>

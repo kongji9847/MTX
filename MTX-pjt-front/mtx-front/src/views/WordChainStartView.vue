@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>MTX 출발</h1>
+  <div class="search-bar">
+    <h1 class="mb-5">MTX 출발</h1>
     <search-bar></search-bar>
   </div>
 </template>
@@ -15,7 +15,9 @@ import SearchBar from '@/components/SearchBar'
     }
   }
 </script>
-
-<style>
-
+<style scoped>
+.search-bar {
+  text-align: center;
+  margin: auto;
+}
 </style>
