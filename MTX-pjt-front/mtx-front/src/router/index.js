@@ -13,6 +13,10 @@ import WordChainStartView from '@/views/WordChainStartView.vue'
 import WordChainView from '@/views/WordChainView'
 import MovieDetailView from '@/views/MovieDetailView.vue'
 
+import ReviewListView from '@/views/ReviewListView.vue'
+import ReviewNewView from '@/views/ReviewNewView.vue'
+import ReviewDetailView from '@/views/ReviewDetailView.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -60,6 +64,21 @@ const routes = [
     path: '/404',
     name: 'NotFound404',
     component: NotFound404,
+  },
+  {
+    path: '/movies/reviews',
+    name: 'reviews',
+    component: ReviewListView,
+  },
+  {
+    path: '/movies/reviews/new',
+    name: 'reviewNew',
+    component: ReviewNewView,
+  },
+  {
+    path: '/movies/reviews/:reviewPk',
+    name: 'review',
+    component: ReviewDetailView,
   },
   // 위에 모든 주소 작성한 뒤 마지막에 배치할 것
   {

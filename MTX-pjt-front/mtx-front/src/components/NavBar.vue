@@ -4,6 +4,9 @@
       <li>
         <router-link :to="{ name: 'wordChainStart' }">Home</router-link>
       </li>
+      <li>
+        <router-link :to="{ name: 'reviews' }">Review</router-link>
+      </li>
       <li v-if="!isLoggedIn">
         <router-link :to=" { name: 'login' }">Login</router-link>
       </li>
@@ -19,7 +22,6 @@
       </li>
       <li v-if="isLoggedIn">
         <router-link :to="{ name: 'logout' }">Logout</router-link>
-
       </li>
     </ul>
   </nav>
