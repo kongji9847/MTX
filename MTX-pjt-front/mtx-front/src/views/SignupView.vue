@@ -1,10 +1,10 @@
 <template>
   <div>
     <h1>Signup</h1>
-    
+
     <account-error-list v-if="authError"></account-error-list>
 
-    <form @submit.prevent="signup(credential)">
+    <form @submit.prevent="signup(credentials)">
       <div>
         <label for="username">Username: </label>
         <input  v-model="credentials.username" type="text" id="username" required/>
@@ -45,12 +45,10 @@
     computed: {
       ...mapGetters(['authError'])
     },
-    actions: {
+    methods: {
       ...mapActions(['signup'])
     },
   }
 </script>
 
-<style>
-
-</style>
+<style></style>

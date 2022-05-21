@@ -10,6 +10,17 @@
       <li v-if="!isLoggedIn">
         <router-link :to="{ name: 'signup' }">Signup</router-link>
       </li>
+
+      <li v-if="isLoggedIn">
+        <router-link :to="{ name: 'profile', params: { username } }">
+          <!-- {{ currentUser.username }}의 프로필 -->
+          My Page
+        </router-link>
+      </li>
+      <li v-if="isLoggedIn">
+        <router-link :to="{ name: 'logout' }">Logout</router-link>
+
+      </li>
     </ul>
   </nav>
 </template>

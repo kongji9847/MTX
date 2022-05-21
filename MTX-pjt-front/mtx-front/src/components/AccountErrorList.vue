@@ -1,6 +1,6 @@
 <template>
   <div class="account-error-list">
-    <p v-for="(error, field) in authError" :key="field">
+    <p v-for="(errors, field) in authError" :key="field">
       {{ field }}
       <ul>
         <li v-for="(error, idx) in errors" :key="idx">
@@ -23,5 +23,7 @@ import { mapGetters } from 'vuex'
 </script>
 
 <style>
-
+  .account-error-list {
+    color: red; 
+  }
 </style>

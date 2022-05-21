@@ -3,6 +3,7 @@ import axios from 'axios'
 import drf from '@/api/drf'
 
 import _ from 'lodash'
+import router from '@/router'
 
 export default {
   state: {
@@ -29,26 +30,42 @@ export default {
   },
 
   actions: {
-    inputSearch({ commit, state }, word) {
+    inputSearch({ commit, state, getters }, word) {
       state.inputValue = word.slice(-1)
-      console.log(state.inputValue)
 
       const params = {
         "start_word": state.inputValue
       }
-
+      
       axios({
         url: drf.movies.wordChain(),
         method: 'get',
         params: params,
       })
       .then(res => {
-        // console.log(res.data)
         commit('SET_MOVIE', res.data)
+        router.push({
+          name: 'movie',
+          params: { moviePk: getters.movie.pk }
+        })
       })
       .catch(err => {
         console.log(err)
-        err;
+      })
+    },
+
+    fetchMovie({ commit, getters }, moviePk) {
+      axios({
+        url: drf.movies.movie(moviePk),
+        method: 'get',
+        headers: getters.authHeader,
+      })
+      .then(res => commit('SET_MOVIE', res.data))
+      .catch(err => {
+        console.error(err.response)
+        if (err.response.status === 404) {
+          router.push({ name: 'NotFound404'})
+        }
       })
     },
   },
