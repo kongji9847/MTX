@@ -69,7 +69,7 @@ export default {
         })
       })
       .catch(error => {
-        alert(error.response.status)
+        alert(error.response.data)
       })
     },
 
