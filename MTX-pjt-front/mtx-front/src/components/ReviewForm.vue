@@ -9,12 +9,6 @@
       <input v-model="newReview.content" type="text" id="content">
     </div>
     <div>
-      <!-- <label for="movie">content: </label> -->
-      <!-- <select name="movie" id="movie">
-        <option v-for="movie in movies" value="{{ movie.title }}" :key="movie.pk"></option>
-      </select> -->
-    </div>
-    <div>
       <button>{{ action }}</button>
     </div>
   </form>
@@ -38,12 +32,18 @@ import { mapActions } from 'vuex'
       }
     },
     methods: {
-      ...mapActions(['createReview']),
+      ...mapActions(['createReview', 'updateReview']),
       onSubmit() {
         if (this.action === 'create') {
           this.createReview(this.newReview)
+        } else if (this.action === 'update') {
+          const payload = {
+            pk: this.review.pk,
+            ...this.newReview,
+          }
+          this.updateReview(payload)
         }
-      }
+      },
     },
   }
 </script>

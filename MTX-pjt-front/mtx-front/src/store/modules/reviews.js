@@ -18,6 +18,7 @@ export default {
     isReview: state => !_.isEmpty(state.review),
     isAuthor: (state, getters) => {
       return state.review.user?.username === getters.currentUser.username
+      // return state.review.user === getters.currentUser.username
     },
   },
 
@@ -70,6 +71,37 @@ export default {
       })
       .catch(error => {
         alert(error.response.data)
+      })
+    },
+
+    deleteReview({ commit, getters }, reviewPk) {
+      if (confirm('정말 삭제하시겠습니까?')) {
+        axios({
+          url: drf.movies.review(reviewPk),
+          method: 'delete',
+          headers: getters.authHeader,
+        })
+        .then(() => {
+          commit('SET_REVIEW', {})
+          router.push({ name: 'reviews'})
+        })
+        .catch(err => console.error(err.response))
+      }
+    },
+
+    updateReview({ commit, getters }, {pk, title, content, movie}) {
+      axios({
+        url: drf.movies.review(pk),
+        method: 'put',
+        data: { title, content, movie },
+        headers: getters.authHeader,
+      })
+      .then(res => {
+        commit('SET_REVIEW', res.data)
+        router.push({
+          name: 'review',
+          params: { reviewPk: getters.review.pk}
+        })
       })
     },
 

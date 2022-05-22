@@ -48,7 +48,8 @@ export default {
   }
 
   h2 {
-    font-family: 'Permanent Marker', cursive;
+    /* font-family: 'Permanent Marker', cursive; */
+    font-family: 'Masque', sans-serif;
   }
 
   .btn {

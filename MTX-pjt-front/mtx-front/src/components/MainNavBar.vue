@@ -28,6 +28,7 @@ export default {
 
 <style scoped>
   @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200&family=Permanent+Marker&display=swap');
+  @import url('http://fonts.cdnfonts.com/css/masque');
 
   .container {
     display: flex;
@@ -38,7 +39,8 @@ export default {
   }
 
   .MTX {
-    font-family: 'Permanent Marker', cursive;
+    /* font-family: 'Permanent Marker', cursive; */
+    font-family: 'Masque', sans-serif;
   }
 
   h4 {

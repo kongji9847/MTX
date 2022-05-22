@@ -6,8 +6,8 @@
     </router-link>
     <ul>
       <li v-for="review in reviews" :key="review.id">
-        <router-link :to="{ name: 'profile', params: {username: review.user } }">
-          {{ review.user }}
+        <router-link :to="{ name: 'profile', params: {username: review.user.username } }">
+          {{ review.user.username }}
         </router-link>
         <br>
         <router-link :to="{ name: 'review', params: {reviewPk: review.id } }">

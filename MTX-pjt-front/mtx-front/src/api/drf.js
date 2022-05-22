@@ -18,11 +18,15 @@ export default {
   movies: {
     wordChain: () => HOST + MOVIES + 'word-chain/',
     movie: moviePk => HOST + MOVIES + `${moviePk}`,
+
     reviews: () => HOST + MOVIES + REVIEWS,
     newReview: moviePk => HOST + MOVIES + `${moviePk}/` + REVIEWS,
+    // 단일 리뷰 조회/수정/삭제
     review: reviewPk => HOST + MOVIES + REVIEWS + `${reviewPk}/`,
-    comments: reviewPk => HOST + MOVIES + REVIEWS + `/${reviewPk}/` + COMMENTS,
-    comment: (reviewPk, commentPk) => HOST + MOVIES + REVIEWS + `/${reviewPk}/` + COMMENTS + `${commentPk}`,
+
+    comments: reviewPk => HOST + MOVIES + REVIEWS + `${reviewPk}/` + COMMENTS,
+    comment: (reviewPk, commentPk) => HOST + MOVIES + REVIEWS + `${reviewPk}/` + COMMENTS + `${commentPk}`,
+
     rate: moviePk => HOST + MOVIES + `${moviePk}/` + RATE,
     search: () => HOST + MOVIES + SEARCH
   }
