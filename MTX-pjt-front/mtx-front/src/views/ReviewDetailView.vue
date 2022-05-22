@@ -16,16 +16,18 @@
       </router-link>
       <button @click="deleteReview(reviewPk)">Delete</button>
     </div>
+    <hr>
+    <comment-list :comments="review.comment_set"></comment-list>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
-// import CommentList from '@/components/CommentList.vue'
+import CommentList from '@/components/CommentList.vue'
 
   export default {
     name: 'ReviewDetail',
-    // components: { CommentList },
+    components: { CommentList },
     data() {
       return {
         reviewPk: this.$route.params.reviewPk,
