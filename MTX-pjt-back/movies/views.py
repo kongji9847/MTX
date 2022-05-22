@@ -89,6 +89,9 @@ def comment_create(request, review_pk):
     serializer = CommentDetailSerializer(data = request.data)
     if serializer.is_valid(raise_exception=True):
         serializer.save(review=review, user=user)
+        # 한 게시글에 달린 여러 댓글 전부 조회하기 위해
+        comments = review.comments.all()
+        serializer = CommentDetailSerializer(comments, many=True)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
