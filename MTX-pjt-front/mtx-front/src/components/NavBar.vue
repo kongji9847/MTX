@@ -29,8 +29,9 @@
 <style scoped>
 .container {
     display: flex;
-    flex-direction: row;
     position: sticky;
+    top: 70px;
+    flex-direction: row;
   }
 
 .items {

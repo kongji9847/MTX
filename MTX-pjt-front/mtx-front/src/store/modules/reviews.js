@@ -7,18 +7,24 @@ import router from '@/router'
 export default {
   state: {
     reviews: [],
-    review: [],
+    review: {},
+    moviePk: null,
   },
 
   getters: {
     reviews: state => state.reviews,
     review: state => state.review,
+    moviePk: state => state.moviePk,
     isReview: state => !_.isEmpty(state.review),
+    isAuthor: (state, getters) => {
+      return state.review.user?.username === getters.currentUser.username
+    },
   },
 
   mutations: {
     SET_REVIEWS: (state, reviews) => state.reviews = reviews,
     SET_REVIEW: (state, review) => state.review = review,
+    SET_MOVIEPK: (state, moviePk) => state.moviePk = moviePk,
     SET_REVIEW_COMMENTS: (state, comments) => (state.review.comments = comments),
   },
 
@@ -50,19 +56,25 @@ export default {
 
     createReview({ commit, getters }, review) {
       axios({
-        url: drf.movies.newReview(1),
+        url: drf.movies.newReview(getters.moviePk),
         method: 'post',
         data: review,
         headers: getters.authHeader,
       })
       .then(res => {
         commit('SET_REVIEW', res.data)
-        console.log(getters.review)
         router.push({
           name: 'review',
-          params: { reviewPk: getters.review.pk }
+          params: { reviewPk: getters.review.id }
         })
       })
+      .catch(error => {
+        alert(error.response.status)
+      })
+    },
+
+    movieChoice({ commit }, moviePk) {
+      commit('SET_MOVIEPK', moviePk)
     }
   },
 }

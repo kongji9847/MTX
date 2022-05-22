@@ -76,7 +76,7 @@ def review_detail(request, review_pk):
             }
             return Response(message, status=status.HTTP_204_NO_CONTENT)
     
-    return Response({"error": "당신은 작성자가 아닙니다!"}, status=status.HTTP_406_NOT_ACCEPTABLE)
+    return Response({"error_message": "당신은 작성자가 아닙니다!"}, status=status.HTTP_406_NOT_ACCEPTABLE)
 
 
 # 댓글 달기
@@ -113,7 +113,7 @@ def comment(request, review_pk, comment_pk):
             }
             return Response(message, status=status.HTTP_204_NO_CONTENT)
     
-    return Response({"error": "당신은 댓글 작성자가 아닙니다!"}, status=status.HTTP_406_NOT_ACCEPTABLE)
+    return Response({"error_message": "당신은 댓글 작성자가 아닙니다!"}, status=status.HTTP_406_NOT_ACCEPTABLE)
 
 # 로그인한 사용자
 # 한번 평점을 날렸으면 다음은 평점 날릴 수 없다.
@@ -124,7 +124,7 @@ def rate(request, movie_pk):
     user = request.user
     
     if user.rate_set.filter(movie=movie_pk):
-        return Response({"error": "이미 평점을 남겼습니다!"}, status=status.HTTP_403_FORBIDDEN)
+        return Response({"error_message": "이미 평점을 남겼습니다!"}, status=status.HTTP_403_FORBIDDEN)
 
 
     score = request.data.get("score")    
@@ -153,7 +153,7 @@ def search(request):
     keyword = request.GET["keyword"]
     movies = Movie.objects.filter(title__contains=keyword)
     if not movies:
-        return Response({'error': '해당 제목의 영화가 없습니다!ㅜㅜ'}, status=status.HTTP_404_NOT_FOUND)
+        return Response({'error_message': '해당 제목의 영화가 없습니다!ㅜㅜ'}, status=status.HTTP_404_NOT_FOUND)
     
     serializer = MovieSearchSerializer(movies, many=True)
     return Response(serializer.data)

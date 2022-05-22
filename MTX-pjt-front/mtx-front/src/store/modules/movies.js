@@ -12,25 +12,15 @@ export default {
     movie: {},
     // movie 디테일
     movieDetail: {},
-
-    // ranked_movies: [],
-    // reviews: [],
-    // review: [],
+    // 검색 결과
+    searchResults: [],
   },
 
   getters: {
     movieList: state => state.movieList,
     movie: state => state.movie,
     movieDetail: state => state.movieDetail,
-
-
-    // ranked_movies: state => state.ranked_movies,
-    // reviews: state => state.reviews,
-    // review: state => state.review,
-    // isAuthor: (state, getters) => {
-    //   return state.review.user?.username === getters.currentUser.username
-    // },
-    // isReview: state => !_.isEmpty(state.article),
+    searchResults: state => state.searchResults,
   },
 
   mutations: {
@@ -48,10 +38,14 @@ export default {
     SET_MOVIE_RATE: (state, rateData) => {
       state.movieDetail.vote_average = rateData.vote_average
       state.movie.vote_average = rateData.vote_average
+    },
+    SET_SEARCH_RESULTS: (state, results) => {
+      state.searchResults = results
     }
   },
 
   actions: {
+    // 검색해서 끝말잇기 시작
     inputSearch({ commit }, last_word) {
       axios({
         url: drf.movies.wordChain(),
@@ -68,21 +62,6 @@ export default {
       })
       .catch(err => {
         console.log(err)
-      })
-    },
-
-    fetchMovie({ commit, getters }, moviePk) {
-      axios({
-        url: drf.movies.movie(moviePk),
-        method: 'get',
-        headers: getters.authHeader,
-      })
-      .then(res => commit('SET_MOVIE', res.data))
-      .catch(err => {
-        console.error(err.response)
-        if (err.response.status === 404) {
-          router.push({ name: 'NotFound404'})
-        }
       })
     },
 
@@ -116,6 +95,7 @@ export default {
       }
     },
 
+    // 영화 디테일 정보 가져오는 함수
     movieDetail({commit}, movieId) {
       axios({
         url: drf.movies.movie(movieId),
@@ -129,6 +109,7 @@ export default {
       })
     },
 
+    // 영화 랭킹 메기는 함수
     movieRate({state, commit, getters}, score) {
       console.log(score)
       console.log(getters.authHeader)
@@ -144,11 +125,33 @@ export default {
         commit('SET_MOVIE_RATE', res.data)
       })
       .catch(error => {
-        console.log(error)
+        console.log(error.response.data)
+        if (error.response.status === 403) {
+          alert(error.response.data.error_message)
+        } else {
+          alert('로그인한 사용자만 평점을 남길 수 있습니다!')
+        }
+      })
+    },
+
+    // 영화 검색하는 함수
+    movieSearch({commit}, keyword) {
+      console.log(keyword)
+      axios({
+        url: drf.movies.search(),
+        method: 'get',
+        params: {
+          "keyword": keyword,
+        }
+      })
+      .then(res => {
+        commit('SET_SEARCH_RESULTS', res.data)
+      })
+      .catch(err => {
+        console.log(err.response)
+        alert(err.response.data.error_message)
       })
     }
     
   },
-  modules: {
-  }
 }

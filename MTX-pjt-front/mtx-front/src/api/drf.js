@@ -5,6 +5,7 @@ const MOVIES = 'movies/'
 const REVIEWS = 'reviews/'
 const COMMENTS = 'comments/'
 const RATE = 'rate/'
+const SEARCH = 'search/'
 
 export default {
   accounts: {
@@ -23,5 +24,6 @@ export default {
     comments: reviewPk => HOST + MOVIES + REVIEWS + `/${reviewPk}/` + COMMENTS,
     comment: (reviewPk, commentPk) => HOST + MOVIES + REVIEWS + `/${reviewPk}/` + COMMENTS + `${commentPk}`,
     rate: moviePk => HOST + MOVIES + `${moviePk}/` + RATE,
+    search: () => HOST + MOVIES + SEARCH
   }
 }

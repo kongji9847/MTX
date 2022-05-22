@@ -41,4 +41,4 @@ class MovieDetailSerializer(serializers.ModelSerializer):
 class MovieSearchSerializer(serializers.ModelSerializer):
     class Meta:
         model = Movie
-        fields = ('pk', 'title',)
+        fields = ('id', 'title',)
