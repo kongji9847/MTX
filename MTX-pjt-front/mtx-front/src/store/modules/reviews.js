@@ -107,6 +107,51 @@ export default {
 
     movieChoice({ commit }, moviePk) {
       commit('SET_MOVIEPK', moviePk)
+    },
+
+    createComment({ commit, getters }, { reviewPk, content }) {
+      const comment = { content }
+      axios({
+        url: drf.movies.comments(reviewPk),
+        method: 'post',
+        data: comment,
+        headers: getters.authHeader,
+      })
+      .then(res => {
+        commit('SET_REVIEW_COMMENTS', res.data)
+      })
+      .catch(err => console.error(err.response))
+    },
+
+    updateComment({ commit, getters }, { reviewPk, commentPk, content }) {
+      const comment = { content }
+      axios({
+        url: drf.movies.comment(reviewPk, commentPk),
+        method: 'put',
+        data: comment,
+        headers: getters.authHeader,
+      })
+      .then(res => {
+        commit('SET_REVIEW_COMMENTS', res.data)
+      })
+      .catch(err => console.error(err.response))
+    },
+
+    deleteComment({ commit, getters }, { reviewPk, commentPk }) {
+      if (confirm('정말 댓글을 삭제하시겠습니까?')) {
+        axios({
+          url: drf.movies.comment(reviewPk, commentPk),
+          method: 'delete',
+          data: {},
+          headers: getters.authHeader,
+        })
+        .then(res => {
+          commit('SET_REVIEW_COMMENTS', res.data)
+        })
+        .catch(err => console.error(err.response))
+      }
     }
+
+
   },
 }
