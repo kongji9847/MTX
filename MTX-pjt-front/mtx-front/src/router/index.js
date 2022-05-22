@@ -16,6 +16,7 @@ import MovieDetailView from '@/views/MovieDetailView.vue'
 import ReviewListView from '@/views/ReviewListView.vue'
 import ReviewNewView from '@/views/ReviewNewView.vue'
 import ReviewDetailView from '@/views/ReviewDetailView.vue'
+import ReviewEditView from '@/views/ReviewEditView.vue'
 
 Vue.use(VueRouter)
 
@@ -79,6 +80,11 @@ const routes = [
     path: '/movies/reviews/:reviewPk',
     name: 'review',
     component: ReviewDetailView,
+  },
+  {
+    path: '/movies/reviews/:reviewPk/edit',
+    name: 'reviewEdit',
+    component: ReviewEditView,
   },
   // 위에 모든 주소 작성한 뒤 마지막에 배치할 것
   {
