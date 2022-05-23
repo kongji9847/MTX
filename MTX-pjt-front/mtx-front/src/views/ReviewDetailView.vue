@@ -5,7 +5,7 @@
     <p>
       작성자: 
         <!-- {{ review.user.username }}</p> -->
-      <router-link :to="{ name: 'profile', params: {username: review.username } }">
+      <router-link :to="{ name: 'profile', params: { username: review.username } }">
         {{ review.username }}
       </router-link>
     <p>내용: {{ review.content }}</p>

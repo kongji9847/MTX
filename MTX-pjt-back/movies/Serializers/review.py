@@ -73,8 +73,8 @@ class CommentDetailSerializer(serializers.ModelSerializer):
             model = User
             fields = ('pk', 'username')
 
-    user = UserSerializer(read_only=True)
     username = serializers.CharField(source="user.username", read_only=True)
+    user = UserSerializer(read_only=True)
     
     class Meta:
         model = Comment
