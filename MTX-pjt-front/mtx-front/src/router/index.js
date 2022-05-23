@@ -109,6 +109,7 @@ router.beforeEach((to, from, next) => {
   const noAuthPages = ['login', 'signup', 'home', 'wordChainStart', 'wordChain', 'movie']
   
   const isAuthRequired = !noAuthPages.includes(to.name)
+  // console.log(from.name)
 
   if (isAuthRequired && !isLoggedIn) {
     alert('로그인 필요합니다. 로그인 페이지로 이동중..')
@@ -118,7 +119,8 @@ router.beforeEach((to, from, next) => {
   }
 
   if (!isAuthRequired && isLoggedIn) {
-    next({ name: 'movies' })
+    // next({ name: 'wordChainStart' })
+    next()
   }
 })
 
