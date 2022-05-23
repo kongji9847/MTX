@@ -119,7 +119,7 @@ export default {
 
     // 영화 랭킹 메기는 함수
     movieRate({state, commit, getters}, score) {
-      console.log(score)
+      // console.log(score)
       console.log(getters.authHeader)
       axios({
         url: drf.movies.rate(state.movieDetail.id),
@@ -133,10 +133,11 @@ export default {
         commit('SET_MOVIE_RATE', res.data)
       })
       .catch(error => {
-        console.log(error.response.data)
+        console.log(error)
         if (error.response.status === 403) {
           alert(error.response.data.error_message)
-        } else {
+        } 
+        else if (error.response.status === 401) {
           alert('로그인한 사용자만 평점을 남길 수 있습니다!')
         }
       })

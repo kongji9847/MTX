@@ -134,7 +134,8 @@ def rate(request, movie_pk):
         return Response({"error_message": "이미 평점을 남겼습니다!"}, status=status.HTTP_403_FORBIDDEN)
 
 
-    score = request.data.get("score")    
+    score = int(request.data.get('score'))
+
     # 영화 평점 db 반영
     total_score = movie.vote_average*movie.vote_count
     total_score += score
