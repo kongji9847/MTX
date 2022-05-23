@@ -4,10 +4,10 @@
     <p>영화: {{ review.movie }}</p>
     <p>
       작성자: 
-      <router-link :to="{ name: 'profile', params: {username: review.user.username } }">
+        {{ review.user.username }}</p>
+      <!-- <router-link :to="{ name: 'profile', params: {username: review.user.username } }">
         {{ review.user.username }}
-      </router-link>
-    </p>
+      </router-link> -->
     <p>내용: {{ review.content }}</p>
     <!-- Edit/Delete -->
     <div v-if="isAuthor">
@@ -40,7 +40,7 @@ import CommentList from '@/components/CommentList.vue'
       ...mapActions([
         'fetchReview',
         'deleteReview',
-      ])
+      ]),
     },
     created() {
       this.fetchReview(this.reviewPk)
