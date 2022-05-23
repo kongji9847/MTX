@@ -25,7 +25,7 @@ export default {
     review: reviewPk => HOST + MOVIES + REVIEWS + `${reviewPk}/`,
 
     comments: reviewPk => HOST + MOVIES + REVIEWS + `${reviewPk}/` + COMMENTS,
-    comment: (reviewPk, commentPk) => HOST + MOVIES + REVIEWS + `${reviewPk}/` + COMMENTS + `${commentPk}`,
+    comment: (reviewPk, commentPk) => HOST + MOVIES + REVIEWS + `${reviewPk}/` + COMMENTS + `${commentPk}/`,
 
     rate: moviePk => HOST + MOVIES + `${moviePk}/` + RATE,
     search: () => HOST + MOVIES + SEARCH

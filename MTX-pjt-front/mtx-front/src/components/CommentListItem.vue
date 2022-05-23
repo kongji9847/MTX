@@ -29,7 +29,7 @@ import { mapGetters, mapActions } from 'vuex'
       return {
         isEditing: false,
         payload: {
-          reviewPk: this.comment.review,
+          reviewPk: this.$route.params.reviewPk,
           commentPk: this.comment.pk,
           content: this.comment.content
         },
@@ -46,8 +46,8 @@ import { mapGetters, mapActions } from 'vuex'
       onUpdate() {
         this.updateComment(this.payload)
         this.isEditing = false
-      }
-    },
+      },
+    }
   }
 </script>
 
