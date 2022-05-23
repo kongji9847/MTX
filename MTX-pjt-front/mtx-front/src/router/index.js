@@ -57,16 +57,6 @@ const routes = [
     component: WordChainView,
   },
   {
-    path: '/movies/:movieId',
-    name: 'movie',
-    component: MovieDetailView,
-  },
-  {
-    path: '/404',
-    name: 'NotFound404',
-    component: NotFound404,
-  },
-  {
     path: '/movies/reviews',
     name: 'reviews',
     component: ReviewListView,
@@ -85,6 +75,16 @@ const routes = [
     path: '/movies/reviews/:reviewPk/edit',
     name: 'reviewEdit',
     component: ReviewEditView,
+  },
+  {
+    path: '/movies/:movieId',
+    name: 'movie',
+    component: MovieDetailView,
+  },
+  {
+    path: '/404',
+    name: 'NotFound404',
+    component: NotFound404,
   },
   // 위에 모든 주소 작성한 뒤 마지막에 배치할 것
   {

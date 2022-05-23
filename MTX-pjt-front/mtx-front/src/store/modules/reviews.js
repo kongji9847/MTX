@@ -38,7 +38,9 @@ export default {
         headers: getters.authHeader,
       })
       .then(res => commit('SET_REVIEWS', res.data))
-      .catch(err => console.error(err.response))
+      .catch(err => {
+        console.log(getters.reviews)
+        console.error(err.response)})
     },
 
     fetchReview({ commit, getters }, reviewPk) {
