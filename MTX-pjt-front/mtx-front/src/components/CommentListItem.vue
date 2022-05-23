@@ -30,7 +30,7 @@ import { mapGetters, mapActions } from 'vuex'
         isEditing: false,
         payload: {
           reviewPk: this.$route.params.reviewPk,
-          commentPk: this.comment.id,
+          commentPk: this.comment.pk,
           content: this.comment.content
         },
       }
