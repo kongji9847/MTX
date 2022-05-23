@@ -1,5 +1,5 @@
 <template>
-  <nav class="container">
+  <nav class="navContainer">
     <h2 class="items">
       <router-link :to="{name: 'home'}" class="MTX">MTX</router-link>
     </h2>
@@ -32,12 +32,15 @@ export default {
   @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200&family=Permanent+Marker&display=swap');
   @import url('http://fonts.cdnfonts.com/css/masque');
 
-  .container {
+  .navContainer {
+    width: 100%;
+    background-color: #031A2A;
+    color: white;
     display: flex;
     position: sticky;
-    top: 20px;
+    top: 0px;
     justify-content: space-between;
-    padding-bottom: 20px;
+    padding: 20px 20px 10px 20px;
   }
 
   .MTX {

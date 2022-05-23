@@ -12,6 +12,9 @@ import SearchBar from '@/components/SearchBar'
     name: 'WordChain',
     components: {
       SearchBar,
+    },
+    created() {
+      this.$store.dispatch('setUrl', 'chainStart')
     }
   }
 </script>
@@ -20,4 +23,5 @@ import SearchBar from '@/components/SearchBar'
   text-align: center;
   margin: auto;
 }
+
 </style>

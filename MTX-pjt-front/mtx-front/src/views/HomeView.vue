@@ -23,20 +23,28 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
   name: 'HomeView',
+  computed: {
+    ...mapGetters(['homeUrl'])
+  },
   methods: {
     goToWordChain: function() {
       this.$router.push({
         name: 'wordChainStart'
       })
-    }
+    },
+  },
+  created() {
+    this.$store.dispatch('setUrl', 'home')
   }
 }
 </script>
 
 <style scoped>
   @import "@/statics/home.css";
+
   .home{
     text-align: center;
     margin: 10px auto;
@@ -65,4 +73,6 @@ export default {
     align-items: center;
     height: 100vh;
   }
+
+
 </style>

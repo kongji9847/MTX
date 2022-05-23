@@ -118,10 +118,10 @@ router.beforeEach((to, from, next) => {
     next()
   }
 
-  if (!isAuthRequired && isLoggedIn) {
-    // next({ name: 'wordChainStart' })
-    next()
-  }
+  // if (!isAuthRequired && isLoggedIn) {
+  //   // next({ name: 'wordChainStart' })
+  //   next()
+  // }
 })
 
 export default router

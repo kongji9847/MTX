@@ -1,5 +1,5 @@
 <template>
-  <nav class="container">
+  <nav class="navContainer">
     <h4 class="items" style="width: 12%">
       <router-link :to="{ name: 'wordChainStart' }">Movie Train  </router-link>
     </h4>
@@ -27,11 +27,13 @@
 </script>
 
 <style scoped>
-.container {
+.navContainer {
+    background-color: rgba(3, 26, 42, 0.5);
     display: flex;
     position: sticky;
     top: 70px;
     flex-direction: row;
+    padding: 20px 20px;
   }
 
 .items {

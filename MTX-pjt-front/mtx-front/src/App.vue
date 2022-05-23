@@ -1,8 +1,8 @@
 <template>
-  <div id="app">
+  <div id="app" :class="{ homeView: homeUrl===0 }">
     <main-nav-bar></main-nav-bar>
-    <nav-bar></nav-bar>
-    <div class="component mt-5">
+    <nav-bar v-show="homeUrl"></nav-bar>
+    <div class="componentView mt-5">
       <router-view></router-view>
     </div>
   </div>
@@ -11,12 +11,15 @@
 <script>
 import NavBar from '@/components/NavBar.vue'
 
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import MainNavBar from './components/MainNavBar.vue'
 
   export default {
     name: 'App',
     components: { MainNavBar, NavBar },
+    computed: {
+      ...mapGetters(['homeUrl', 'chainStartUrl']),
+    },
     methods: {
       ...mapActions(['fetchCurrentUser'])
     },
@@ -29,24 +32,19 @@ import MainNavBar from './components/MainNavBar.vue'
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200&family=Permanent+Marker&display=swap');
 
-html {
-  background-color: #031A2A;
-  color: white;
-}
 
 #app {
-  background-color: #031A2A;
-  color: white;
+  width: 100%;
+  height: 100%;
 }
 
-.component {
+.componentView {
   width: 80%;
   margin: 10px auto;
 }
 
 nav {
   text-align: center;
-  padding: 10px 0px;
 }
 
 nav a {
@@ -58,11 +56,19 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  text-decoration-line: none;
   color: #42b983;
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: bold;
   text-align: center;
   text-decoration-line: none;
 }
+
+
+.homeView {
+    background-color: #031A2A;
+    color: white;
+    background-size: cover;
+  }
+
+
 </style>
