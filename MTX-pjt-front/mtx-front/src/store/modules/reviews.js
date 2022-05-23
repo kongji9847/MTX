@@ -26,8 +26,8 @@ export default {
     SET_REVIEWS: (state, reviews) => state.reviews = reviews,
     SET_REVIEW: (state, review) => state.review = review,
     SET_MOVIEPK: (state, moviePk) => state.moviePk = moviePk,
+    SET_REVIEW_COMMENTS: (state, comments) => (state.review.comment_set = comments),
     REMOVE_MOVIEPK: (state) => state.moviePk = null,
-    SET_REVIEW_COMMENTS: (state, comments) => (state.review.comments = comments),
   },
 
   actions: {
@@ -127,6 +127,7 @@ export default {
 
     updateComment({ commit, getters }, { reviewPk, commentPk, content }) {
       const comment = { content }
+      console.log(commentPk)
       axios({
         url: drf.movies.comment(reviewPk, commentPk),
         method: 'put',
