@@ -129,7 +129,6 @@ export default {
 
     updateComment({ commit, getters }, { reviewPk, commentPk, content }) {
       const comment = { content }
-      console.log(commentPk)
       axios({
         url: drf.movies.comment(reviewPk, commentPk),
         method: 'put',
@@ -137,6 +136,7 @@ export default {
         headers: getters.authHeader,
       })
       .then(res => {
+        console.log(res.data)
         commit('SET_REVIEW_COMMENTS', res.data)
       })
       .catch(err => console.error(err.response))
