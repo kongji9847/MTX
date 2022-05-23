@@ -13,11 +13,11 @@ export default {
     login: () => HOST + ACCOUNTS + 'login/',
     logout: () => HOST + ACCOUNTS + 'logout/',
     currentUserInfo: () => HOST + ACCOUNTS + 'user/',
-    profile: username => HOST + ACCOUNTS + 'profile/' + username,
+    profile: username => HOST + ACCOUNTS + 'profile/' + `${username}/`,
   },
   movies: {
     wordChain: () => HOST + MOVIES + 'word-chain/',
-    movie: moviePk => HOST + MOVIES + `${moviePk}`,
+    movie: moviePk => HOST + MOVIES + `${moviePk}/`,
 
     reviews: () => HOST + MOVIES + REVIEWS,
     newReview: moviePk => HOST + MOVIES + `${moviePk}/` + REVIEWS,
