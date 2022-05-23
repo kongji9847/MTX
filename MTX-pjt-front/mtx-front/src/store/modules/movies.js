@@ -41,17 +41,22 @@ export default {
     },
     SET_SEARCH_RESULTS: (state, results) => {
       state.searchResults = results
+    },
+    REMOVE_MOVIELIST: (state) => {
+      state.movieList = []
     }
   },
 
   actions: {
     // 검색해서 끝말잇기 시작
     inputSearch({ commit }, last_word) {
+      commit('REMOVE_MOVIELIST')
       axios({
         url: drf.movies.wordChain(),
         method: 'get',
         params: {
-          "start_word": last_word
+          "start_word": last_word,
+          "now_id": -1,
         },
       })
       .then(res => {
@@ -66,12 +71,15 @@ export default {
     },
 
     // 영화 끝말잇기 next 로직
-    nextMovie({commit}, start_word) {
+    nextMovie({commit}, info) {
+      const start_word = info.start_word
+      const now_id = info.now_id
       axios({
         url: drf.movies.wordChain(),
         method: 'get',
         params: {
           "start_word": start_word,
+          "now_id": now_id,
         }
       })
       .then((res) => {
@@ -89,9 +97,9 @@ export default {
         commit('REMOVE_MOVIE')
       } else {
         alert('돌아갈 영화가 없습니다!')
-        // router.push({
-        //   name: 'wordChainStart'
-        // })
+        router.push({
+          name: 'wordChainStart'
+        })
       }
     },
 

@@ -9,7 +9,7 @@
       <span v-for="(genre, idx) in movie.genre_ids" :key="idx">{{genre.name}} </span>
     </p>
     <button @click="prevMovie">Back</button>
-    <button @click="nextMovie(movie.last_word)">Next</button>
+    <button @click="nextMovie(info)">Next</button>
   </div>
 </template>
 
@@ -20,6 +20,9 @@ import { mapGetters, mapActions } from 'vuex'
     name: 'WordChainView',
     computed: {
       ...mapGetters(['isAuthor', 'movie']),
+      info: function () {
+        return {"start_word": this.movie.last_word, "now_id": this.movie.id}
+      }
     },
     methods: {
       ...mapActions(['fetchMovie', 'nextMovie', 'prevMovie']),

@@ -1,4 +1,5 @@
 from django.shortcuts import get_list_or_404, get_object_or_404
+from django.db.models import Q
 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
@@ -10,11 +11,14 @@ from .Serializers.movie import MovieSerializer, MovieDetailSerializer, MovieSear
 from .Serializers.review import RateSerializer, ReviewSerializer, ReviewDetailSerializer, CommentSerializer, CommentDetailSerializer, RateChangeSerializer
 from .models import Movie, Review, Comment, Rate
 
+
 # 영화 끝말 잇기 로직: params : {"start_word":"글자"} 해서 get 요청 보내면 해당 글자로 시작하는 영화 랜덤 선택
 @api_view(['GET'])
 def word_chain(request):
     start_word = request.GET["start_word"]
-    movie = Movie.objects.filter(title__istartswith=start_word).order_by('?').first()
+    now_id = int(request.GET["now_id"])
+    movie = Movie.objects.filter(Q(title__istartswith=start_word) & ~Q(id = now_id)).order_by('?').first()
+
     if movie:
         serializer = MovieSerializer(movie)
         return Response(serializer.data, status=status.HTTP_200_OK)
