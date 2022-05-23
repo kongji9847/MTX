@@ -21,7 +21,11 @@ import SearchBar from '@/components/SearchBar'
 <style scoped>
 .search-bar {
   text-align: center;
-  margin: auto;
+  margin: 8% auto;
+}
+h1 {
+  font-weight: bold;
+  font-size: 3rem;
 }
 
 </style>

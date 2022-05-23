@@ -40,7 +40,7 @@ export default {
     position: sticky;
     top: 0px;
     justify-content: space-between;
-    padding: 20px 20px 10px 20px;
+    padding: 20px 10% 10px 10%;
   }
 
   .MTX {

@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :class="{ homeView: homeUrl===0 }">
+  <div id="app" :class="{ homeView: homeUrl===0 , movieChainStart: chainStartUrl===1}">
     <main-nav-bar></main-nav-bar>
     <nav-bar v-show="homeUrl"></nav-bar>
     <div class="componentView mt-5">
@@ -69,6 +69,13 @@ nav a.router-link-exact-active {
     color: white;
     background-size: cover;
   }
+
+.movieChainStart {
+  background-image: url('@/assets/blur_img.png');
+  background-size: cover;
+  background-size: no-repeat;
+  background-position: center;
+}
 
 
 </style>

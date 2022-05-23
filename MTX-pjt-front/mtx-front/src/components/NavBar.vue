@@ -28,12 +28,15 @@
 
 <style scoped>
 .navContainer {
-    background-color: rgba(3, 26, 42, 0.5);
+    background-color: rgba(3, 26, 42, 0.6);
     display: flex;
     position: sticky;
-    top: 70px;
+    top: 60px;
     flex-direction: row;
-    padding: 20px 20px;
+    padding: 15px 10%;
+    margin: 0px;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
 .items {
