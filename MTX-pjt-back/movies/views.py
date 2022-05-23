@@ -103,6 +103,7 @@ def comment_create(request, review_pk):
 @api_view(['PUT', 'DELETE'])
 @permission_classes([IsAuthenticated])
 def comment(request, review_pk, comment_pk):
+    review = get_object_or_404(Review, pk=review_pk)
     comment = get_object_or_404(Comment, pk=comment_pk)
     
     if request.method == 'PUT':
@@ -110,15 +111,20 @@ def comment(request, review_pk, comment_pk):
             serializer = CommentDetailSerializer(comment, data=request.data)
             if serializer.is_valid(raise_exception=True):
                 serializer.save()
+                comment_set = review.comment_set.all()
+                serializer = CommentDetailSerializer(comment_set, many=True)
                 return Response(serializer.data)
     
     elif request.method == 'DELETE':
         if request.user == comment.user:
             comment.delete()
-            message = {
-                'delete': f'{review_pk} 리뷰에 달린 댓글이 삭제되었습니다.'
-            }
-            return Response(message, status=status.HTTP_204_NO_CONTENT)
+            # message = {
+            #     'delete': f'{review_pk} 리뷰에 달린 댓글이 삭제되었습니다.'
+            # }
+            comment_set = review.comment_set.all()
+            serializer = CommentDetailSerializer(comment_set, many=True)
+            return Response(serializer.data)
+            # return Response(message, status=status.HTTP_204_NO_CONTENT)
     
     return Response({"error_message": "당신은 댓글 작성자가 아닙니다!"}, status=status.HTTP_406_NOT_ACCEPTABLE)
 
