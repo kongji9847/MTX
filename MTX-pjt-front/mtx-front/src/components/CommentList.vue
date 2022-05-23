@@ -2,9 +2,9 @@
   <div class="comment-list">
     <ul>
       <comment-list-item 
-        v-for="comment in comments"
+        v-for="(comment, idx) in comments"
         :comment="comment"
-        :key="comment.id">
+        :key="idx">
       </comment-list-item>
     </ul>
 
