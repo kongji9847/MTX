@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>제목: {{ review.title }}</h1>
-    <p>영화: {{ review.movie }}</p>
+    <p>영화: {{ review.movie_title }}</p>
     <p>
       작성자: 
         <!-- {{ review.user.username }}</p> -->

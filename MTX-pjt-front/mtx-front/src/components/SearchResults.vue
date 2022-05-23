@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <p class="movie-choice" v-for="(result, idx) in searchResults" :key="idx" @click="[movieChoice(result.id), showMoviePk()]">
+      <p class="movie-choice" v-for="(result, idx) in searchResults" :key="idx" @click="[movieChoice(result.id), showMoviePk(), changeColor()]">
         {{result.title}}
       </p>
     </div>
@@ -21,8 +21,11 @@ export default {
     ...mapActions(['movieChoice']),
     showMoviePk: function() {
       const selectDiv = document.querySelector('.moviePk')
-      selectDiv.innerText = this.moviePk
-    }
+      const movie_pick = this.searchResults.find((movie) => {
+        return movie.id === this.moviePk
+      })
+      selectDiv.innerText = movie_pick.title
+    },
   }
 }
 </script>
@@ -36,5 +39,9 @@ export default {
   /* .movie-choice:visited {
     color:orange;
   } */
+
+  .orange{
+    background-color: orange;
+  }
 
 </style>

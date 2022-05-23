@@ -94,6 +94,7 @@ export default {
     },
 
     updateReview({ commit, getters }, {pk, title, content, movie}) {
+      console.log(pk)
       axios({
         url: drf.movies.review(pk),
         method: 'put',
@@ -104,7 +105,7 @@ export default {
         commit('SET_REVIEW', res.data)
         router.push({
           name: 'review',
-          params: { reviewPk: getters.review.pk}
+          params: { reviewPk: getters.review.id }
         })
       })
     },
@@ -128,6 +129,7 @@ export default {
     },
 
     updateComment({ commit, getters }, { reviewPk, commentPk, content }) {
+      console.log(commentPk, content)
       const comment = { content }
       axios({
         url: drf.movies.comment(reviewPk, commentPk),
