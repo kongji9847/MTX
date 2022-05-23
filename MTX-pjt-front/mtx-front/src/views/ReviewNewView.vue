@@ -12,7 +12,7 @@ import ReviewForm from '@/components/ReviewForm.vue'
 import GeneralSearchBar from '@/components/GeneralSearchBar.vue'
 import SearchResults from '@/components/SearchResults.vue'
 
-import {mapGetters} from 'vuex'
+import {mapGetters, mapActions} from 'vuex'
   export default {
     name: 'ReviewNewView',
     components: { ReviewForm, GeneralSearchBar, SearchResults },
@@ -27,6 +27,12 @@ import {mapGetters} from 'vuex'
     },
     computed: {
       ...mapGetters(['searchResults'])
+    },
+    methods: {
+      ...mapActions(['removeSearchHistory'])
+    },
+    created() {
+      this.$store.dispatch('removeSearchHistory')
     }
   }
 </script>

@@ -26,6 +26,7 @@ export default {
     SET_REVIEWS: (state, reviews) => state.reviews = reviews,
     SET_REVIEW: (state, review) => state.review = review,
     SET_MOVIEPK: (state, moviePk) => state.moviePk = moviePk,
+    REMOVE_MOVIEPK: (state) => state.moviePk = null,
     SET_REVIEW_COMMENTS: (state, comments) => (state.review.comments = comments),
   },
 
@@ -68,6 +69,7 @@ export default {
           name: 'review',
           params: { reviewPk: getters.review.id }
         })
+        commit('REMOVE_MOVIEPK')
       })
       .catch(error => {
         alert(error.response.data)

@@ -44,6 +44,10 @@ export default {
     },
     REMOVE_MOVIELIST: (state) => {
       state.movieList = []
+    },
+    REMOVE_SEARCH_RESULT: (state) => {
+      state.searchResults = []
+      state.moviePk = null
     }
   },
 
@@ -160,7 +164,10 @@ export default {
         console.log(err.response)
         alert(err.response.data.error_message)
       })
-    }
+    },
     
+    removeSearchHistory({commit}) {
+      commit('REMOVE_SEARCH_RESULT')
+    }
   },
 }
