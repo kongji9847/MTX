@@ -27,8 +27,10 @@ class ReviewSerializer(serializers.ModelSerializer):
         class Meta:
             model = User
             fields = ('pk', 'username')
-
+            
+    username = serializers.CharField(source="user.username", read_only=True)
     user = UserSerializer(read_only=True)
+    movie_title = serializers.CharField(source="movie.title", read_only=True)
     # 댓글 수
     comment_count = serializers.IntegerField(source="comment_set.count", read_only=True)
 
@@ -51,6 +53,10 @@ class ReviewDetailSerializer(serializers.ModelSerializer):
             fields = ('pk', 'username')
 
     user = UserSerializer(read_only=True)
+    username = serializers.CharField(source="user.username", read_only=True)
+    movie_title = serializers.CharField(source="movie.title", read_only=True)
+    # 댓글 수
+    comment_count = serializers.IntegerField(source="comment_set.count", read_only=True)
 
     class Meta:
         model = Review
