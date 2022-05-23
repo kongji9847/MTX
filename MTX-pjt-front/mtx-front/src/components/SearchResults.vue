@@ -1,11 +1,11 @@
 <template>
   <div>
     <div>
-      <p class="movie-choice" v-for="(result, idx) in searchResults" :key="idx" @click="movieChoice(result.id)">
+      <p class="movie-choice" v-for="(result, idx) in searchResults" :key="idx" @click="[movieChoice(result.id), showMoviePk()]">
         {{result.title}}
       </p>
     </div>
-    <div v-if="moviePk">moviePk: {{moviePk}}</div>
+    <div class="moviePk" v-show="moviePk"></div>
   </div>
 </template>
 
@@ -18,7 +18,11 @@ export default {
     ...mapGetters(['searchResults', 'moviePk'])
   },
   methods: {
-    ...mapActions(['movieChoice'])
+    ...mapActions(['movieChoice']),
+    showMoviePk: function() {
+      const selectDiv = document.querySelector('.moviePk')
+      selectDiv.innerText = this.moviePk
+    }
   }
 }
 </script>
@@ -29,8 +33,8 @@ export default {
     cursor: pointer;
   }
 
-  .movie-choice:active{
-    color: orange;
-  }
+  /* .movie-choice:visited {
+    color:orange;
+  } */
 
 </style>
