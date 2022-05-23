@@ -1,6 +1,6 @@
 <template>
-  <li class="comment=list-item">
-    <router-link :to="{ name: 'profile', params: { username: comment.username } }">
+  <li class="comment-list-item">
+    <router-link :to="{ name: 'profile', params: { username: comment.username } }" v-if="comment.username">
       {{ comment.username }}
     </router-link>:
 
@@ -30,7 +30,7 @@ import { mapGetters, mapActions } from 'vuex'
         isEditing: false,
         payload: {
           reviewPk: this.$route.params.reviewPk,
-          commentPk: this.comment.pk,
+          commentPk: this.comment.id,
           content: this.comment.content
         },
       }
