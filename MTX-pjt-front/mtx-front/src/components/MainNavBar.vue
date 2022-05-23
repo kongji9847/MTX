@@ -1,6 +1,8 @@
 <template>
   <nav class="container">
-    <h2 class="items MTX">MTX</h2>
+    <h2 class="items">
+      <router-link :to="{name: 'home'}" class="MTX">MTX</router-link>
+    </h2>
     <div class="items">
       <h4 v-if="!isLoggedIn" >
       <router-link :to=" { name: 'login' }" >Login </router-link>
@@ -42,6 +44,7 @@ export default {
     /* font-family: 'Permanent Marker', cursive; */
     font-family: 'Masque', sans-serif;
   }
+
 
   h4 {
     padding: 0 10px;

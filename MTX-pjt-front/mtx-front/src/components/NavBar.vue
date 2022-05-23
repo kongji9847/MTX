@@ -1,7 +1,7 @@
 <template>
   <nav class="container">
-    <h4 class="items">
-      <router-link :to="{ name: 'wordChainStart' }">Home  </router-link>
+    <h4 class="items" style="width: 12%">
+      <router-link :to="{ name: 'wordChainStart' }">Movie Train  </router-link>
     </h4>
     <h4 class="items">
       <router-link :to="{ name: 'reviews' }">Review  </router-link>
