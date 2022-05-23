@@ -1,6 +1,6 @@
 <template>
   <nav class="navContainer">
-    <h4 class="items" style="width: 12%">
+    <h4 class="items" style="width: 13%">
       <router-link :to="{ name: 'wordChainStart' }">Movie Train  </router-link>
     </h4>
     <h4 class="items">

@@ -14,7 +14,8 @@ export default new Vuex.Store({
   },
   getters: {
     homeUrl : (state) => {return (state.nowUrl === 'home') ? 0 : 1},
-    chainStartUrl : state => {return (state.nowUrl === 'chainStart') ? 1 : 0}
+    chainStartUrl : state => {return (state.nowUrl === 'chainStart') ? 1 : 0},
+    chainUrl: state => {return (state.nowUrl === 'chain') ? 1 : 0 }
   },
   mutations: {
     SET_URL : (state, nowUrl) => {

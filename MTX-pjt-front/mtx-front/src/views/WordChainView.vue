@@ -1,15 +1,27 @@
 <template>
-  <div>
-    <h1>{{ movie.title }}</h1>
-    <img :src="movie.poster_path" alt="movie.title" height="300px" @click="goDetail">
-    <p>줄거리: {{ movie.overview }}</p>
-    <p>개봉 일자: {{ movie.release_date}}</p>
-    <p>평점: {{ movie.vote_average }}</p>
-    <p>장르: 
-      <span v-for="(genre, idx) in movie.genre_ids" :key="idx">{{genre.name}} </span>
-    </p>
-    <button @click="prevMovie">Back</button>
-    <button @click="nextMovie(info)">Next</button>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <button @click="prevMovie">Back</button>
+      </div>
+      <div class="col">
+        <h1>{{ movie.title }}</h1>
+        <p>평점: {{ movie.vote_average }}</p>
+      </div>
+      <div class="col">
+        <img :src="movie.poster_path" alt="movie.title" height="300px" @click="goDetail">
+      </div>
+      <div class="col">
+        <p>줄거리: {{ movie.overview }}</p>
+        <p>개봉 일자: {{ movie.release_date}}</p>
+        <p>장르: 
+          <span v-for="(genre, idx) in movie.genre_ids" :key="idx">{{genre.name}} </span>
+        </p>
+      </div>
+      <div class="col">
+        <button @click="nextMovie(info)">Next</button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -39,6 +51,8 @@ import { mapGetters, mapActions } from 'vuex'
         this.$router.push({
           name: 'wordChainStart'
         })
+      } else {
+        this.$store.dispatch('setUrl', 'chain')
       }
     }
   }
