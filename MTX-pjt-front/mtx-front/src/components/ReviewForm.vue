@@ -38,7 +38,7 @@ import { mapActions } from 'vuex'
           this.createReview(this.newReview)
         } else if (this.action === 'update') {
           const payload = {
-            pk: this.review.pk,
+            pk: this.review.id,
             ...this.newReview,
           }
           this.updateReview(payload)

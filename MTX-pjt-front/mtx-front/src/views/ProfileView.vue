@@ -4,8 +4,8 @@
 
     <h2>작성한 리뷰</h2>
     <ul>
-      <li v-for="review in profile.reviews" :key="review.pk">
-        <router-link :to="{ name: 'review', params: { reviewPk: review.pk } }">
+      <li v-for="review in profile.review_set" :key="review.pk">
+        <router-link :to="{ name: 'review', params: { reviewPk: review.id } }">
           {{ review.title }}
         </router-link>
       </li>
