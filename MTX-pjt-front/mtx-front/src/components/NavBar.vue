@@ -1,14 +1,14 @@
 <template>
   <nav class="navContainer">
-    <h4 class="items" style="width: 13%">
+    <h5 class="items" style="width: 13%">
       <router-link :to="{ name: 'wordChainStart' }">Movie Train  </router-link>
-    </h4>
-    <h4 class="items">
+    </h5>
+    <h5 class="items">
       <router-link :to="{ name: 'reviews' }">Review  </router-link>
-    </h4>
-    <h4 v-if="isLoggedIn" class="items">
+    </h5>
+    <h5 v-if="isLoggedIn" class="items">
       <router-link :to="{ name: 'profile', params: { username } }">My Page</router-link>
-    </h4>
+    </h5>
   </nav>
 </template>
 
