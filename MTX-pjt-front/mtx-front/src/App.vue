@@ -39,6 +39,7 @@ import MainNavBar from './components/MainNavBar.vue'
 #app {
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
 }
 
 .componentView {
@@ -78,6 +79,7 @@ nav a.router-link-exact-active {
     background-color: #031A2A;
     color: white;
     background-size: cover;
+    background-attachment: fixed;
   }
 
 .movieChainStart {
@@ -85,10 +87,13 @@ nav a.router-link-exact-active {
   background-size: cover;
   background-size: no-repeat;
   background-position: center;
+  background-attachment: fixed;
 }
 
 .movieChain {
   background-color: #EFEFEF;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 

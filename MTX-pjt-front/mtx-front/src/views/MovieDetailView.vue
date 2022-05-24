@@ -45,6 +45,7 @@ import { mapGetters, mapActions } from 'vuex'
     },
     created() {
       this.$store.dispatch('movieDetail', this.movieId)
+      this.$store.dispatch('setUrl', 'detail')
     }
   }
 </script>
