@@ -24,8 +24,9 @@ import SearchBar from '@/components/SearchBar'
   margin: 8% auto;
 }
 h1 {
-  font-weight: bold;
-  font-size: 3rem;
+  font-weight: 700;
+  font-size: 3.5rem;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 </style>
