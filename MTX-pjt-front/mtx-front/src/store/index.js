@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 import accounts from './modules/accounts'
 import movies from './modules/movies'
 import reviews from './modules/reviews'
+import main from './modules/main'
 
 Vue.use(Vuex)
 
@@ -28,5 +29,5 @@ export default new Vuex.Store({
       commit('SET_URL', nowUrl)
     }
   },
-  modules: { accounts, movies, reviews },
+  modules: { accounts, movies, reviews, main },
 })

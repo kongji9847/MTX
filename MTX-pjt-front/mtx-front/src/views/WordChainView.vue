@@ -87,8 +87,8 @@ import { mapGetters, mapActions } from 'vuex'
 <style scoped>
 .redBox {
   background-color: #9B2A2B;
-  width: 10vw;
-  height: 1vh;
+  width: 9vw;
+  height: 0.9vh;
 }
 
 .poster > .whiteCircle {
@@ -106,12 +106,12 @@ import { mapGetters, mapActions } from 'vuex'
   white-space: normal;
   font-family: 'NanumSquareBold';
   word-break: keep-all;
-  font-size: 3.5vw;
+  font-size: 2.3vw;
   /* font-weight: 700; */
 }
 
 .star-ratings {
-  font-size: 3vw;
+  font-size: 2.5vw;
   color: #878787; 
   position: relative;
   unicode-bidi: bidi-override;
@@ -158,7 +158,7 @@ import { mapGetters, mapActions } from 'vuex'
 }
 
 .titleFont {
-  font-size: 1.2vw;
+  font-size: 0.9vw;
   font-weight: bold;
 }
 
@@ -191,7 +191,7 @@ import { mapGetters, mapActions } from 'vuex'
 }
 
 .contextFont {
-  font-size: 1.2vw;
+  font-size: 0.9vw;
 }
 
 </style>

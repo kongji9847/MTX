@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <p class="movie-choice" v-for="(result, idx) in searchResults" :key="idx" @click="[movieChoice(result.id), showMoviePk(), changeColor()]">
+      <p class="movie-choice" v-for="(result, idx) in searchResults" :key="idx" @click="[movieChoice(result.id), showMoviePk()]">
         {{result.title}}
       </p>
     </div>
