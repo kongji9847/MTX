@@ -13,6 +13,8 @@ class CommentSerializer(serializers.ModelSerializer):
 
     user = UserSerializer(read_only=True)
     username = serializers.CharField(source="user.username", read_only=True)
+    created_at = serializers.DateTimeField(format="%Y-%m-%d %H:%M", read_only=True)
+    updated_at = serializers.DateTimeField(format="%Y-%m-%d %H:%M", read_only=True)
 
     class Meta:
         model = Comment
@@ -34,6 +36,8 @@ class ReviewSerializer(serializers.ModelSerializer):
     movie_title = serializers.CharField(source="movie.title", read_only=True)
     # 댓글 수
     comment_count = serializers.IntegerField(source="comment_set.count", read_only=True)
+    created_at = serializers.DateTimeField(format="%Y-%m-%d %H:%M", read_only=True)
+    updated_at = serializers.DateTimeField(format="%Y-%m-%d %H:%M", read_only=True)
 
     class Meta:
         model = Review
@@ -58,6 +62,8 @@ class ReviewDetailSerializer(serializers.ModelSerializer):
     movie_title = serializers.CharField(source="movie.title", read_only=True)
     # 댓글 수
     comment_count = serializers.IntegerField(source="comment_set.count", read_only=True)
+    created_at = serializers.DateTimeField(format="%Y-%m-%d %H:%M", read_only=True)
+    updated_at = serializers.DateTimeField(format="%Y-%m-%d %H:%M", read_only=True)
 
     class Meta:
         model = Review
@@ -75,6 +81,8 @@ class CommentDetailSerializer(serializers.ModelSerializer):
 
     username = serializers.CharField(source="user.username", read_only=True)
     user = UserSerializer(read_only=True)
+    created_at = serializers.DateTimeField(format="%Y-%m-%d %H:%M", read_only=True)
+    updated_at = serializers.DateTimeField(format="%Y-%m-%d %H:%M", read_only=True)
     
     class Meta:
         model = Comment

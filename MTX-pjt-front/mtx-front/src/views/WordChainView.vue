@@ -24,7 +24,7 @@
           <div class="whiteCircle"></div>
         </div>
         <div class="col-5">
-          <div class="content-position" style="margin-top:6rem; margin-left:1rem;">
+          <div class="content-position" style="margin-top:6rem; margin-left:3rem;">
             <p><span class="titleFont">개봉일:</span> <span class="contextFont">{{ movie.release_date}}</span></p>
             <p><span class="titleFont">평점:</span> <span class="contextFont">{{movie.vote_average}}</span></p>
             <p><span class="titleFont">장르: </span> 
@@ -33,7 +33,7 @@
             <div>
               <span class="titleFont">줄거리: </span>
               <div class="overviewBox">
-                <p class="overview ContextFont">{{ movie.overview }}</p>
+                <p class="overview contextFont">{{ movie.overview }}</p>
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@ import { mapGetters, mapActions } from 'vuex'
   }
 </script>
 
-<style>
+<style scoped>
 .redBox {
   background-color: #9B2A2B;
   width: 10vw;
@@ -98,7 +98,7 @@ import { mapGetters, mapActions } from 'vuex'
   border-radius: 80%;
   position: relative;
   top: -5vh;
-  left: -5vw;
+  left: -5.5vw;
   z-index: 2;
 }
 
@@ -106,7 +106,7 @@ import { mapGetters, mapActions } from 'vuex'
   white-space: normal;
   font-family: 'NanumSquareBold';
   word-break: keep-all;
-  font-size: 4vw;
+  font-size: 3.5vw;
   /* font-weight: 700; */
 }
 
@@ -120,7 +120,6 @@ import { mapGetters, mapActions } from 'vuex'
 }
 
 .star-ratings-fill {
-  color: #fff58c;
   padding: 0;
   position: absolute;
   z-index: 1;
@@ -166,7 +165,7 @@ import { mapGetters, mapActions } from 'vuex'
 
 .overviewBox .overview {
   width: 100%;
-  height: 20vh;
+  height: 14vw;
   overflow: hidden;
   text-overflow:ellipsis;
   display:-webkit-box;

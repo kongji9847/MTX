@@ -46,6 +46,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding: 20px 10% 10px 10%;
+    z-index: 5;
   }
 
   .MTX {
