@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <h1>Review List</h1>
+  <div class="ReviewList">
+    <review-paginated-list :reviews="reviews"></review-paginated-list>
+    <!-- <h1>Review List</h1>
     <router-link :to="{ name: 'reviewNew' }">
       <button>Create</button>
     </router-link>
@@ -18,20 +19,25 @@
           댓글 수: {{ review.comment_count }}
         </p>
       </li>
-    </ul>
+    </ul> -->
+    <!-- ------------------------------------------------------ -->
+
+    <!-- ------------------------------------------------------ -->
   </div>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import ReviewPaginatedList from '@/components/ReviewPaginatedList.vue'
 
   export default {
     name: 'ReviewList',
+    components: { ReviewPaginatedList },
     computed: {
-      ...mapGetters(['reviews'])
-    },
+      ...mapGetters(['reviews']),
+      },
     methods: {
-      ...mapActions(['fetchReviews'])
+      ...mapActions(['fetchReviews']),
     },
     created() {
       this.fetchReviews()
@@ -39,6 +45,6 @@ import { mapActions, mapGetters } from 'vuex'
   }
 </script>
 
-<style>
+<style scoped>
 
 </style>

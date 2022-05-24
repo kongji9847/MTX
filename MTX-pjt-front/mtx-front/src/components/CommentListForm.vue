@@ -1,9 +1,19 @@
 <template>
-  <form @submit.prevent="onSubmit" class="comment-list-form">
-    <label for="comment">comment: </label>
-    <input type="text" id="comment" v-model="content" required>
-    <button>Comment</button>
-  </form>
+  <div>
+    <!-- <form @submit.prevent="onSubmit" class="comment-list-form">
+      <label for="comment">comment</label>
+      <input type="text" id="comment" v-model="content" required>
+      <button>Comment</button>
+    </form> -->
+    <div class="row g-3 align-items-center">
+      <div class="col-auto">
+        <label for="inputComment" class="col-form-label">댓글</label>
+      </div>
+      <div class="col-auto">
+        <input type="text" id="inputComment" class="form-control">
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>

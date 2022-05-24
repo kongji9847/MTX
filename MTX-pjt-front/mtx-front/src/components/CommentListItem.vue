@@ -1,21 +1,27 @@
 <template>
   <li class="comment-list-item">
-    <router-link :to="{ name: 'profile', params: { username: comment.username } }" v-if="comment.username">
-      {{ comment.username }}
-    </router-link>:
+    <div class="comment-author">
+      <span class="material-symbols-outlined">account_circle</span>&nbsp;
+      <router-link :to="{ name: 'profile', params: { username: comment.username } }" v-if="comment.username">
+        {{ comment.username }}
+      </router-link>
+    </div>
 
-    <span v-if="!isEditing">{{ payload.content }}</span>
+    <div class="d-flex justify-content-between">
+      <span v-if="!isEditing">{{ payload.content }}</span>
 
-    <span v-if="isEditing">
-      <input type="text" v-model="payload.content">
-      <button @click="onUpdate">Update</button> | 
-      <button @click="switchIsEditing">Cancel</button>
-    </span>
+      <span v-if="isEditing">
+        <input type="text" v-model="payload.content">
+        <button @click="onUpdate">Update</button> | 
+        <button @click="switchIsEditing">Cancel</button>
+      </span>
 
-    <span v-if="currentUser.username === comment.username && !isEditing">
-      <button @click="switchIsEditing">Edit</button> |
-      <button @click="deleteComment(payload)">Delete</button>
-    </span>
+      <span v-if="currentUser.username === comment.username && !isEditing">
+        <button @click="switchIsEditing" class="mx-3 btn btn-outline-secondary btn-sm">Edit</button>
+        <button @click="deleteComment(payload)" class="btn btn-outline-dark btn-sm">Delete</button>
+      </span>
+    </div>
+    <hr>
   </li>
 </template>
 
@@ -51,6 +57,26 @@ import { mapGetters, mapActions } from 'vuex'
   }
 </script>
 
-<style>
+<style scoped>
+
+  .comment-list-item {
+    list-style: none;
+  }
+
+  .comment-author {
+    display: flex;
+    align-content: center;
+    margin: 1rem auto;
+  }
+
+  .comment-author a {
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    text-decoration-line: none;
+  }
+
+  .comment-author:hover {
+    font-weight: bold;
+  }
 
 </style>

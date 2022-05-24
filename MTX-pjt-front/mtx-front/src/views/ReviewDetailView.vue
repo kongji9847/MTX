@@ -1,23 +1,26 @@
 <template>
   <div>
-    <h1>제목: {{ review.title }}</h1>
-    <p>영화: {{ review.movie_title }}</p>
-    <p>
-      작성자: 
-        <!-- {{ review.user.username }}</p> -->
+    <span class="review-title">{{ review.title }}</span>
+    <span class="review-movie">{{ review.movie_title }}</span>
+    <p class="review-author">
+      <span class="material-symbols-outlined">account_circle</span>&nbsp;
       <router-link :to="{ name: 'profile', params: { username: review.username } }" v-if="review.username">
         {{ review.username }}
       </router-link>
-    <p>내용: {{ review.content }}</p>
+    <hr>
+    <p class="review-content">{{ review.content }}</p>
     <!-- Edit/Delete -->
-    <div v-if="isAuthor">
+    <div v-if="isAuthor" class="author-btn">
       <router-link :to="{ name: 'reviewEdit', params: { reviewPk } }">
-        <button>Edit</button>
+        <button class="mx-3 btn edit-btn btn-outline-secondary">Edit</button>
       </router-link>
-      <button @click="deleteReview(reviewPk)">Delete</button>
+      <button @click="deleteReview(reviewPk)" class="btn delete-btn btn-outline-dark">Delete</button>
     </div>
     <hr>
     <comment-list :comments="review.comment_set"></comment-list>
+    <router-link :to="{ name: 'reviews' }">
+      <button class="btn my-3 btn-secondary">목록으로</button>
+    </router-link>
   </div>
 </template>
 
@@ -48,6 +51,36 @@ import CommentList from '@/components/CommentList.vue'
   }
 </script>
 
-<style>
+<style scoped>
+
+  .review-title {
+    font-family: 'NanumSquareAcb';
+    font-size: 3rem;
+    margin: 1rem 1rem 0 0;
+  }
+
+  .review-movie {
+    font-family: 'NanumSquareAcr';
+    color: #F8A111;
+  }
+
+  .review-author {
+    display: flex;
+  }
+
+  .review-author a {
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    text-decoration-line: none;
+  }
+
+  .review-author a:hover {
+    font-family: 'NanumSquareAcb';
+  }
+
+  .author-btn {
+    display: flex;
+    justify-content: end;
+  }
 
 </style>
