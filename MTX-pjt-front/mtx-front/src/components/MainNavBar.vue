@@ -44,6 +44,7 @@ export default {
     position: sticky;
     top: 0px;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 10% 10px 10%;
   }
 
