@@ -14,6 +14,7 @@ export default {
     movieDetail: {},
     // 검색 결과
     searchResults: [],
+    topMovieId: 453395,
   },
 
   getters: {

@@ -7,17 +7,32 @@ const API_KEY = process.env.VUE_APP_TMDB_API_KEY
 
 export default {
   state: {
-    topRatedMovies : []
+    topRatedMovies : [],
+    nowPlayingMovies : [],
+    upComingMovies: [],
+    similarMovies: [],
   },
 
   getters: {
-    topRatedMovies: (state) => { return state.topRatedMovies }
+    topRatedMovies: (state) => { return state.topRatedMovies },
+    nowPlayingMovies: (state) => { return state.nowPlayingMovies },
+    upComingMovies: (state) => { return state.upComingMovies },
+    similarMovies: (state) => { return state.similarMovies },
   },
 
   mutations: {
     TOP_RATED_MOVIES : function (state, movies) {
       state.topRatedMovies = movies
-    }
+    },
+    NOW_PLAYING_MOVIES : function (state, movies) {
+      state.nowPlayingMovies = movies
+    },
+    UP_COMING_MOVIES : function (state, movies) {
+      state.upComingMovies = movies
+    },
+    SIMILAR_MOVIES : function (state, movies) {
+      state.similarMovies = movies
+    },
   },
 
   actions: {
@@ -33,13 +48,65 @@ export default {
         }
       })
       .then((res) => {
-        console.log(res.data.results)
         commit('TOP_RATED_MOVIES', res.data.results)
       })
       .catch((err) => {
         console.log(err)
       })
-    }
+    },
+    nowPlayingMoviesAPI: function ({commit}) {
+      axios({
+        url: base_url+'movie/now_playing',
+        method: "get",
+        params: {
+          api_key: API_KEY,
+          language: "ko",
+          page: 1,
+          region: 'KR'
+        }
+      })
+      .then((res) => {
+        commit('NOW_PLAYING_MOVIES', res.data.results)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+    },
+    upComingMoviesAPI: function ({commit}) {
+      axios({
+        url: base_url+'movie/upcoming',
+        method: "get",
+        params: {
+          api_key: API_KEY,
+          language: "ko",
+          page: 1,
+        }
+      })
+      .then((res) => {
+        commit('UP_COMING_MOVIES', res.data.results)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+    },
+    similarMoviesAPI: function ({commit}, movieId) {
+      axios({
+        url: base_url+`movie/${movieId}/similar`,
+        method: "get",
+        params: {
+          api_key: API_KEY,
+          language: "ko",
+          page: 1,
+        }
+      })
+      .then((res) => {
+        commit('SIMILAR_MOVIES', res.data.results)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+    },
+  
 
 
 
