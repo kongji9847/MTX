@@ -2,7 +2,7 @@
   <div>
     <!-- <h1 class="login-title">Login</h1> -->
     <br>
-    <account-error-list v-if="authError"></account-error-list>
+    <!-- <account-error-list v-if="authError"></account-error-list> -->
     <!-- ----------------------------------------- -->
     <!-- <div class="container">
       <div class="row justify-content-center">
@@ -52,6 +52,7 @@
                     <div class="text-center">
                         <h1 class="h4 text-gray-900 mb-4 login-title" id="login-title">Welcome Back!</h1>
                     </div>
+                    <account-error-list v-if="authError"></account-error-list>
                     <form @submit.prevent="login(credentials)" class="user">
                         <div class="form-group">
                           <label for="usernameInput" class="form-label" id="login-font">Username</label>
