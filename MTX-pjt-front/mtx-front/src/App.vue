@@ -59,6 +59,11 @@ nav a {
   text-decoration-line: none;
 }
 
+nav a:hover {
+  color: white;
+  font-weight: bold;
+}
+
 nav a.router-link-exact-active {
   color: #F8D488;
   /* font-family: 'Barlow Condensed', sans-serif; */

@@ -3,10 +3,10 @@
     <h5 class="items" style="width: 13%">
       <router-link :to="{ name: 'wordChainStart' }">Movie Train  </router-link>
     </h5>
-    <h5 class="items">
-      <router-link :to="{ name: 'reviews' }">Community  </router-link>
+    <h5 class="items" style="width: 13%">
+      <router-link :to="{ name: 'reviews' }">Community   </router-link>
     </h5>
-    <h5 v-if="isLoggedIn" class="items">
+    <h5 v-if="isLoggedIn" class="items" style="width: 13%">
       <router-link :to="{ name: 'profile', params: { username } }">My Page</router-link>
     </h5>
   </nav>
@@ -40,7 +40,6 @@
   }
 
 .items {
-  width: 10%;
   text-align: left;
 }
 </style>
