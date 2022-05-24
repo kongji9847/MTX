@@ -54,6 +54,7 @@ import { mapActions } from 'vuex'
     color: black;
     font-size: 2rem;
     font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
     padding-left: 1rem;
     padding-right: 1rem;
   }
@@ -65,6 +66,6 @@ import { mapActions } from 'vuex'
     width: 80%;
     font-size: 2rem;
     font-weight: 500;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Open Sans', sans-serif;
   }
 </style>
