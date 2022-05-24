@@ -14,10 +14,13 @@
         <label for="password">password: </label>
         <input v-model="credentials.password" type="password" id="password" required />
       </div>
-
       <button>Login</button>
     </form>
+
+    <!-- ----------------------------------------- -->
   </div>
+
+  
 </template>
 
 <script>

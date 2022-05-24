@@ -15,8 +15,8 @@
       </div>
     </div>
     <div class="home-body">
-      <h2>Movie Train Express</h2>
-      <p class="my-4">영화 제목으로 떠나는 기차 여행</p>
+      <h1>Movie Train Express</h1>
+      <p class="my-4 subtitle">영화 제목으로 떠나는 기차 여행</p>
       <button class="btn" @click="goToWordChain">출발하기</button>
     </div>
   </div>
@@ -55,15 +55,21 @@ export default {
     padding-top: 10px;
   }
 
-  h2 {
+  h1 {
     /* font-family: 'Permanent Marker', cursive; */
     font-family: 'Masque', sans-serif;
+    margin: 1rem auto;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
   }
 
   .btn {
     background-color: darkorange;
     color: white;
     font-weight: bold;
+    margin: 1rem;
   }
 
 

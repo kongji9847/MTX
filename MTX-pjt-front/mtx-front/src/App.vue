@@ -31,6 +31,7 @@ import MainNavBar from './components/MainNavBar.vue'
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 
 #app {
@@ -49,16 +50,18 @@ nav {
 
 nav a {
   color: white;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: bold;
+  /* font-family: 'Barlow Condensed', sans-serif; */
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
   text-align: center;
   text-decoration-line: none;
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: bold;
+  color: #F8D488;
+  /* font-family: 'Barlow Condensed', sans-serif; */
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
   text-align: center;
   text-decoration-line: none;
 }
