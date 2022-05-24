@@ -1,5 +1,9 @@
 <template>
-  <div id="app" :class="{ homeView: homeUrl===0 , movieChainStart: chainStartUrl===1, movieChain: chainUrl===1}">
+  <div id="app" 
+  :class="{ homeView: homeUrl===0, 
+  mainView : mainUrl === 1, movieChainStart: chainStartUrl===1, 
+  movieChain: chainUrl===1}">
+  
     <main-nav-bar></main-nav-bar>
     <nav-bar v-show="homeUrl"></nav-bar>
     <div class="componentView mt-5">
@@ -18,7 +22,7 @@ import MainNavBar from './components/MainNavBar.vue'
     name: 'App',
     components: { MainNavBar, NavBar },
     computed: {
-      ...mapGetters(['homeUrl', 'chainStartUrl', 'chainUrl']),
+      ...mapGetters(['homeUrl', 'chainStartUrl', 'chainUrl', 'mainUrl']),
     },
     methods: {
       ...mapActions(['fetchCurrentUser'])
@@ -81,6 +85,13 @@ nav a.router-link-exact-active {
     background-size: cover;
     background-attachment: fixed;
   }
+
+.mainView {
+  background-color: #031A2A;
+  color: white;
+  background-size: cover;
+  background-attachment: fixed;
+}
 
 .movieChainStart {
   background-image: url('@/assets/blur_img.png');

@@ -18,6 +18,8 @@ import ReviewNewView from '@/views/ReviewNewView.vue'
 import ReviewDetailView from '@/views/ReviewDetailView.vue'
 import ReviewEditView from '@/views/ReviewEditView.vue'
 
+import MainView from '@/views/MainView.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -45,6 +47,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/home',
+    name: 'main',
+    component: MainView
   },
   {
     path: '/movies',

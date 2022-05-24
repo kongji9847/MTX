@@ -1,5 +1,8 @@
 <template>
   <nav class="navContainer">
+    <h5 class="items" style="width: 9%">
+      <router-link :to="{ name: 'main' }">Home</router-link>
+    </h5>
     <h5 class="items" style="width: 12%">
       <router-link :to="{ name: 'wordChainStart' }">Movie Train</router-link>
     </h5>
