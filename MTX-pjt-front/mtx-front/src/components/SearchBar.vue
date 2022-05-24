@@ -1,7 +1,7 @@
 <template>
   <div class="search-bar">
     <div class="searchContent">
-      <input v-model="word" @keyup.enter="inputSearch(last_word)" type="text" placeholder="Search">
+      <input v-model="word" @keyup.enter="inputSearch(last_word)" type="text" placeholder=" Search">
       <button @click="inputSearch(last_word)" class="mx-3">start</button>
     </div>
   </div>
@@ -64,6 +64,7 @@ import { mapActions } from 'vuex'
     padding: 0.5rem;
     width: 80%;
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: 500;
+    font-family: 'Quicksand', sans-serif;
   }
 </style>
