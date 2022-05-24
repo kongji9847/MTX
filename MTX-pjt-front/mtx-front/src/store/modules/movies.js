@@ -71,6 +71,9 @@ export default {
       })
       .catch(err => {
         console.log(err)
+        if (err.response.status === 404) {
+          alert(`'${last_word}'(으)로 시작하는 단어가 없습니다!`)
+        }
       })
     },
 
@@ -90,7 +93,7 @@ export default {
         commit('SET_MOVIE', res.data)
       })
       .catch(error => {
-        alert(`${start_word}(으)로 시작하는 영화가 없습니다!`)
+        alert(`'${start_word}'(으)로 시작하는 영화가 없습니다!`)
         console.log(error)
       })
     },
