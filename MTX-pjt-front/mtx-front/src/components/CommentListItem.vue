@@ -53,7 +53,7 @@ import { mapGetters, mapActions } from 'vuex'
         this.updateComment(this.payload)
         this.isEditing = false
       },
-    }
+    },
   }
 </script>
 

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>New Review</h1>
     <general-search-bar></general-search-bar>
     <search-results v-if="searchResults" class="my-5"></search-results>
     <review-form :review="review" action="create"></review-form>
