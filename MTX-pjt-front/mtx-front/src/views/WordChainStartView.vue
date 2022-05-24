@@ -24,9 +24,10 @@ import SearchBar from '@/components/SearchBar'
   margin: 8% auto;
 }
 h1 {
-  font-weight: 700;
+  font-family: 'NanumSquareAceb';
+  /* font-weight: 700; */
   font-size: 3.5rem;
-  font-family: 'Noto Sans KR', sans-serif;
+  /* font-family: 'Noto Sans KR', sans-serif; */
 }
 
 </style>

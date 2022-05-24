@@ -6,7 +6,7 @@
     <div class="container slid-page">
       <div class="row">
         <div class="col-3 title-position">
-          <h1 style="font-weight:bold; font-family:noto sans;">{{ movie.title }}</h1>
+          <h1 class="movie-title">{{ movie.title }}</h1>
           <div class="redBox mb-2"></div>
           <div class="star-ratings">
             <div 
@@ -101,6 +101,11 @@ import { mapGetters, mapActions } from 'vuex'
   z-index: 2;
 }
 
+.movie-title {
+  font-family: 'NanumSquareBold';
+  /* font-weight: 700; */
+}
+
 .star-ratings {
   font-size: 3vw;
   color: #878787; 
@@ -158,6 +163,7 @@ import { mapGetters, mapActions } from 'vuex'
 .overview {
   position: relative;
   z-index: 4;
+  /* font-family: 'NanumSquareLight'; */
 }
 
 .slide-page {
