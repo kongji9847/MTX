@@ -81,7 +81,7 @@ nav a.router-link-exact-active {
   background-position: center;
 }
 
-.movieChian {
+.movieChain {
   background-color: #EFEFEF;
 }
 

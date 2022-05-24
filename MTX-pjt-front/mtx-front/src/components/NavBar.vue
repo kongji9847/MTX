@@ -4,7 +4,7 @@
       <router-link :to="{ name: 'wordChainStart' }">Movie Train  </router-link>
     </h5>
     <h5 class="items">
-      <router-link :to="{ name: 'reviews' }">Review  </router-link>
+      <router-link :to="{ name: 'reviews' }">Community  </router-link>
     </h5>
     <h5 v-if="isLoggedIn" class="items">
       <router-link :to="{ name: 'profile', params: { username } }">My Page</router-link>
