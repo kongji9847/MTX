@@ -61,7 +61,7 @@ nav a.router-link-exact-active {
   color: #F8D488;
   /* font-family: 'Barlow Condensed', sans-serif; */
   font-family: 'Quicksand', sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   text-align: center;
   text-decoration-line: none;
 }

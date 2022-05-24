@@ -4,15 +4,15 @@
       <router-link :to="{name: 'home'}" class="MTX">MTX</router-link>
     </h2>
     <div class="items">
-      <h4 v-if="!isLoggedIn" >
+      <h5 v-if="!isLoggedIn" >
       <router-link :to=" { name: 'login' }" >Login </router-link>
-      </h4>
-      <h4 v-if="isLoggedIn">
+      </h5>
+      <h5 v-if="isLoggedIn">
         <router-link :to="{ name: 'logout' }">Logout</router-link>
-      </h4>
-      <h4 v-if="!isLoggedIn" >
+      </h5>
+      <h5 v-if="!isLoggedIn" >
         <router-link :to=" { name: 'signup' }" >Signup </router-link>
-      </h4>
+      </h5>
     </div>
   </nav>
 </template>
