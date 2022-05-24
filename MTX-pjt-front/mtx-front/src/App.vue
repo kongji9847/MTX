@@ -87,10 +87,13 @@ nav a.router-link-exact-active {
   }
 
 .mainView {
-  background-color: #031A2A;
+  background-color: black;
   color: white;
   background-size: cover;
   background-attachment: fixed;
+  /* background-color: #EFEFEF;
+  background-size: cover;
+  background-attachment: fixed; */
 }
 
 .movieChainStart {

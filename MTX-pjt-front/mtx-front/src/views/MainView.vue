@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>home</h1>
     <general-search-bar></general-search-bar>
     <search-results v-if="searchResults" class="my-5"></search-results>
     <h2 class="mb-4">현재 상영작</h2>
@@ -11,6 +10,8 @@
     <movie-list :movies="topRatedMovies" class="mb-5"></movie-list>
     <h2 class="my-4">닥터 스트레인지와 비슷한 영화</h2>
     <movie-list :movies="similarMovies" class="mb-5"></movie-list>
+
+    
   </div>
 </template>
 

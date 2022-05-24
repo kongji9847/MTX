@@ -11,6 +11,7 @@ export default {
     nowPlayingMovies : [],
     upComingMovies: [],
     similarMovies: [],
+    modalMovie: {},
   },
 
   getters: {
@@ -18,6 +19,7 @@ export default {
     nowPlayingMovies: (state) => { return state.nowPlayingMovies },
     upComingMovies: (state) => { return state.upComingMovies },
     similarMovies: (state) => { return state.similarMovies },
+    modalMovie: (state) => {return state.modalMovie}
   },
 
   mutations: {
@@ -33,6 +35,9 @@ export default {
     SIMILAR_MOVIES : function (state, movies) {
       state.similarMovies = movies
     },
+    MODAL_MOVIE: function (state, movie) {
+      state.modalMovie = movie
+    }
   },
 
   actions: {
@@ -106,6 +111,9 @@ export default {
         console.log(err)
       })
     },
+    nowModalMovie: function({commit}, movie) {
+      commit('MODAL_MOVIE', movie)
+    }
   
 
 
