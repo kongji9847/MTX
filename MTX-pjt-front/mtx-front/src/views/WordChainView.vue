@@ -199,7 +199,7 @@ import { mapGetters, mapActions } from 'vuex'
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  display: block;
   }
 
 </style>

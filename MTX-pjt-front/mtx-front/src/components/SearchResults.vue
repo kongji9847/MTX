@@ -64,8 +64,8 @@ export default {
     /* font-size: 1vw; */
   }
 
-  ::-webkit-scrollbar {
+  /* ::-webkit-scrollbar {
   display: none;
-  }
+  } */
 
 </style>

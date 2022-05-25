@@ -205,9 +205,9 @@ import ReviewPaginatedList from '@/components/ReviewPaginatedList.vue'
   font-size: 0.9vw;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
-  }
+  } */
 
 .community-title {
     font-family: 'Open Sans', sans-serif;
