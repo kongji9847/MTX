@@ -1,8 +1,8 @@
 <template>
   <div>
     <general-search-bar></general-search-bar>
-    <search-results v-if="searchResults" class="my-5"></search-results>
-    <review-form :review="review" action="create"></review-form>
+    <search-results v-show="searchResults.length > 0" class="my-5"></search-results>
+    <review-form :review="review" action="create" class="mt-5"></review-form>
   </div>
 </template>
 
@@ -32,6 +32,7 @@ import {mapGetters, mapActions} from 'vuex'
     },
     created() {
       this.$store.dispatch('removeSearchHistory')
+      this.$store.dispatch('setUrl', 'chain')
     }
   }
 </script>

@@ -49,7 +49,7 @@ import { mapActions } from 'vuex'
     width: 15%;
     padding: 0.6rem;
     border: none;
-    border-radius: 10%;
+    border-radius: 7px;
     background-color: #F8D488;
     color: black;
     font-size: 2rem;
@@ -60,6 +60,7 @@ import { mapActions } from 'vuex'
   }
 
   input {
+    border-radius: 7px;
     border: none;
     margin: 0px;
     padding: 0.5rem;

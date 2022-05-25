@@ -26,6 +26,7 @@ import { mapGetters, mapActions } from 'vuex'
     },
     created() {
       this.fetchReview(this.$route.params.reviewPk)
+      this.$store.dispatch('setUrl', 'chain')
     },
   }
 </script>

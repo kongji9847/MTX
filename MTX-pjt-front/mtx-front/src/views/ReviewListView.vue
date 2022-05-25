@@ -40,6 +40,7 @@ import ReviewPaginatedList from '@/components/ReviewPaginatedList.vue'
       ...mapActions(['fetchReviews']),
     },
     created() {
+      this.$store.dispatch('setUrl', 'chain')
       this.fetchReviews()
     },
   }

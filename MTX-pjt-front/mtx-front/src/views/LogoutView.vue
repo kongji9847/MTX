@@ -15,6 +15,7 @@ import { mapActions, mapGetters } from 'vuex'
       ...mapGetters(['isLoggedIn'])
     },
     created() {
+      this.$store.dispatch('setUrl', 'chain')
       if (this.isLoggedIn) {
         this.logout()
       } else {

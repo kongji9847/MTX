@@ -108,6 +108,9 @@ import AccountErrorList from '@/components/AccountErrorList.vue'
     methods: {
       ...mapActions(['login'])
     },
+    created() {
+      this.$store.dispatch('setUrl', 'chain')
+    }
   }
 </script>
 

@@ -46,6 +46,7 @@ import CommentList from '@/components/CommentList.vue'
       ]),
     },
     created() {
+      this.$store.dispatch('setUrl', 'chain')
       this.fetchReview(this.reviewPk)
     },
   }

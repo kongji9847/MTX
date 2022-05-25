@@ -111,6 +111,9 @@
     methods: {
       ...mapActions(['signup'])
     },
+    created() {
+      this.$store.dispatch('setUrl', 'chain')
+    }
   }
 </script>
 
