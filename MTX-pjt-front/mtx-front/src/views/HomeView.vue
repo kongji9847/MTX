@@ -66,7 +66,7 @@ export default {
   }
 
   .btn {
-    background-color: darkorange;
+    background-color: #F8A111;
     color: white;
     font-weight: bold;
     margin: 1rem;
