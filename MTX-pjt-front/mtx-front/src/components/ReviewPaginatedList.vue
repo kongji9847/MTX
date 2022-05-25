@@ -22,12 +22,14 @@
                           </tr>
                       </thead>
                       <tbody>
-                        <tr v-for="(review, idx) in paginatedData" :key="idx">
+                        <tr v-for="(review, idx) in paginatedData" :key="idx" class="review-tr">
                           <td>
                             {{ review.id }}
                           </td>
                           <td width="20%">
-                            {{ review.movie_title }}
+                            <span class="review-movie-title">
+                              {{ review.movie_title }}
+                            </span>
                           </td>
                           <td width="40%">
                             <span class="review-title">
@@ -130,13 +132,22 @@
     font-family: 'NanumSquareAcr';
   }
 
+  .review-movie-title {
+    color: rgb(112, 112, 112);
+  }
+
   .review-title a {
     color: #041C2D ;
     text-decoration-line: none;
   }
 
+  .review-tr:hover {
+    background-color: #efefef;
+  }
+
   .review-title:hover {
   font-weight: bold;
+  text-decoration-line: underline;
   }
 
   .comment-count {
@@ -146,7 +157,7 @@
 
   .review-create {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
   }
 
   .review-create-btn {

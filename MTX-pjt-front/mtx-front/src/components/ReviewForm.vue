@@ -1,32 +1,37 @@
 <template>
-  <form @submit.prevent="onSubmit">
-    <!-- <div>
-      <label for="title">title: </label>
-      <input v-model="newReview.title" type="text" id="title" />
-    </div>
-    <div>
-      <label for="content">content: </label>
-      <input v-model="newReview.content" type="text" id="content">
-    </div>
-    <div>
-      <button>{{ action }}</button>
-    </div> -->
-    <div class="mb-3 row">
-      <label for="reviewTitle" class="col-sm-2 col-form-label">제목</label>
-      <div class="col-sm-10">
-        <input v-model="newReview.title" type="text" class="form-control" id="reviewTitle">
+  <div class="container-fluid">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <form @submit.prevent="onSubmit">
+          <!-- <div>
+            <label for="title">title: </label>
+            <input v-model="newReview.title" type="text" id="title" />
+          </div>
+          <div>
+            <label for="content">content: </label>
+            <input v-model="newReview.content" type="text" id="content">
+          </div>
+          <div>
+            <button>{{ action }}</button>
+          </div> -->
+          <div class="mb-3">
+            <label for="reviewTitle" class="form-label">제목</label>
+              <input v-model="newReview.title" type="text" class="form-control" id="reviewTitle">
+          </div>
+          <div class="mb-3">
+            <label for="reviewContent" class="form-label">내용</label>
+              <textarea v-model="newReview.content" class="form-control" id="reviewContent" rows="10"></textarea>
+          </div>
+          <div class="review-create-submit">
+            <router-link :to="{ name: 'reviews' }">
+              <button class="btn btn-outline-secondary">목록으로</button>
+            </router-link>
+            <button class="btn review-create-btn">Create</button>
+          </div>
+        </form>
       </div>
     </div>
-    <div class="mb-3 row">
-      <label for="reviewContent" class="col-sm-2 col-form-label">내용</label>
-      <div class="col-sm-10">
-        <textarea v-model="newReview.content" class="form-control" id="reviewContent" rows="10"></textarea>
-      </div>
-    </div>
-    <div class="review-create-submit">
-      <button class="btn review-create-btn">Create</button>
-    </div>
-  </form>
+  </div>
 </template>
 
 <script>
@@ -67,14 +72,14 @@ import { mapActions } from 'vuex'
 
   .review-create-submit {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
   }
 
   .review-create-btn {
     color: white;
     background-color: #F8A111;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
   }
 
 </style>

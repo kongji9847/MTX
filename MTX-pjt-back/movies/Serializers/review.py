@@ -86,8 +86,8 @@ class CommentDetailSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Comment
-        fields = '__all__'
-        read_only_fields = ('user', 'review',)
+        fields = ('pk', 'username', 'user', 'created_at', 'updated_at', 'content',)
+        read_only_fields = ('pk', 'user', 'review',)
 
 
 # 영화 평점 생성 - 개인 프로필에 표시될 것
