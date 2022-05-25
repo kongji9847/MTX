@@ -70,6 +70,10 @@ import { mapActions } from 'vuex'
 
 <style scoped>
 
+  #reviewContent {
+    line-height: 2;
+  }
+
   .review-create-submit {
     display: flex;
     justify-content: space-between;

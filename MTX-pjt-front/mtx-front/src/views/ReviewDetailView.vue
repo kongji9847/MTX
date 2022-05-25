@@ -79,6 +79,11 @@ import CommentList from '@/components/CommentList.vue'
     font-family: 'NanumSquareAcb';
   }
 
+  .review-content {
+    white-space: pre-wrap;
+    line-height: 2;
+  }
+
   .author-btn {
     display: flex;
     justify-content: flex-end;
