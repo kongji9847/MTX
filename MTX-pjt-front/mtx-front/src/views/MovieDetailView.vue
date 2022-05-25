@@ -193,6 +193,12 @@ import ReviewPaginatedList from '@/components/ReviewPaginatedList.vue'
   -webkit-box-orient:vertical;
 }
 
+::-webkit-scrollbar {
+  display: none;
+  /* width: 5px;
+  background-color: #031A2A; 또는 트랙에 추가한다 */
+}
+
 
 .overviewBox {
   position: relative;
@@ -205,9 +211,6 @@ import ReviewPaginatedList from '@/components/ReviewPaginatedList.vue'
   font-size: 0.9vw;
 }
 
-/* ::-webkit-scrollbar {
-  display: none;
-  } */
 
 .community-title {
     font-family: 'Open Sans', sans-serif;
