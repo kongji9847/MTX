@@ -158,7 +158,7 @@ export default {
 
     // 영화 검색하는 함수
     movieSearch({commit}, keyword) {
-      console.log(keyword)
+      // console.log(keyword)
       axios({
         url: drf.movies.search(),
         method: 'get',

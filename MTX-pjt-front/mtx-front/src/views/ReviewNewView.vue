@@ -18,22 +18,23 @@ import {mapGetters, mapActions} from 'vuex'
     data() {
       return {
         review: {
-          pk: null,
+          pk: this.moviePk,
           title: '',
           content: '',
         }
       }
     },
     computed: {
-      ...mapGetters(['searchResults'])
+      ...mapGetters(['searchResults', 'moviePk'])
     },
     methods: {
       ...mapActions(['removeSearchHistory'])
     },
     created() {
+      // console.log(this.moviePk)
       this.$store.dispatch('removeSearchHistory')
       this.$store.dispatch('setUrl', 'chain')
-    }
+    },
   }
 </script>
 

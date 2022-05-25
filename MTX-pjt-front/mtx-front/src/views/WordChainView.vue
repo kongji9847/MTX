@@ -25,13 +25,13 @@
         </div>
         <div class="col-5">
           <div class="content-position" style="margin-top:6rem; margin-left:3rem;">
-            <p><span class="titleFont">개봉일:</span> <span class="contextFont">{{ movie.release_date}}</span></p>
-            <p><span class="titleFont">평점:</span> <span class="contextFont">{{movie.vote_average}}</span></p>
-            <p><span class="titleFont">장르: </span> 
+            <p><span class="titleFont">개봉일 </span> <span class="contextFont">{{ movie.release_date}}</span></p>
+            <p><span class="titleFont">평점 </span> <span class="contextFont">{{movie.vote_average}}</span></p>
+            <p><span class="titleFont">장르 </span> 
               <span v-for="(genre, idx) in movie.genre_ids" :key="idx" class="contextFont">{{genre.name}} </span>
             </p>
             <div>
-              <span class="titleFont">줄거리: </span>
+              <span class="titleFont">줄거리 </span>
               <div class="overviewBox">
                 <p class="overview contextFont">{{ movie.overview }}</p>
               </div>
@@ -166,11 +166,11 @@ import { mapGetters, mapActions } from 'vuex'
 .overviewBox .overview {
   width: 100%;
   height: 14vw;
-  overflow: hidden;
-  text-overflow:ellipsis;
+  overflow: scroll;
+  /* text-overflow:ellipsis;
   display:-webkit-box;
   -webkit-line-clamp:8;
-  -webkit-box-orient:vertical;
+  -webkit-box-orient:vertical; */
 }
 
 
@@ -193,5 +193,9 @@ import { mapGetters, mapActions } from 'vuex'
 .contextFont {
   font-size: 0.9vw;
 }
+
+::-webkit-scrollbar {
+  display: none;
+  }
 
 </style>

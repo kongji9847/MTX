@@ -1,5 +1,6 @@
 <template>
   <div class="ReviewList">
+    <h1 class="h3 mb-3 text-gray-800 community-title">Community</h1>
     <review-paginated-list :reviews="reviews"></review-paginated-list>
     <!-- <h1>Review List</h1>
     <router-link :to="{ name: 'reviewNew' }">
@@ -47,5 +48,11 @@ import ReviewPaginatedList from '@/components/ReviewPaginatedList.vue'
 </script>
 
 <style scoped>
+
+.community-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+  }
 
 </style>

@@ -31,7 +31,7 @@ export default {
         console.log(this.newSearch)
         return this.idxMovie
       }
-    }
+    },
   },
   methods: {
     ...mapActions(['movieChoice']),

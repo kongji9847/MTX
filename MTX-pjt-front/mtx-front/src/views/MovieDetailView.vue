@@ -26,13 +26,13 @@
         </div>
         <div class="col-5">
           <div class="content-position" style="margin-top:6rem; margin-left:3rem;">
-            <p><span class="titleFont">개봉일:</span> <span class="contextFont">{{ movieDetail.release_date}}</span></p>
-            <p><span class="titleFont">평점:</span> <span class="contextFont">{{movieDetail.vote_average}}</span></p>
-            <p><span class="titleFont">장르: </span> 
+            <p><span class="titleFont">개봉일 </span> <span class="contextFont">{{ movieDetail.release_date}}</span></p>
+            <p><span class="titleFont">평점 </span> <span class="contextFont">{{movieDetail.vote_average}}</span></p>
+            <p><span class="titleFont">장르 </span> 
               <span v-for="(genre, idx) in movieDetail.genre_ids" :key="idx" class="contextFont">{{genre.name}} </span>
             </p>
             <div>
-              <span class="titleFont">줄거리: </span>
+              <span class="titleFont">줄거리 </span>
               <div class="overviewBox">
                 <p class="overview contextFont">{{ movieDetail.overview }}</p>
               </div>
@@ -42,13 +42,14 @@
       </div>
       <hr>
       <div class="row">
-        <h2>리뷰</h2>
-        <div v-for="(review, idx) in movieDetail.review_set" :key="idx">
-          <h3>제목: {{review.title}}</h3>
-          <p>내용: {{review.content}}</p>
-          <p>작성일: {{review.created_at}}, 수정일: {{review.updated_at}}</p>
+        <h1 class="h3 mb-3 text-gray-800 community-title">Review</h1>
+        <review-paginated-list v-if="reviews" :reviews="reviews"></review-paginated-list>
+        <!-- <div v-for="(review, idx) in movieDetail.review_set" :key="idx">
+          <h3>제목 {{review.title}}</h3>
+          <p>내용 {{review.content}}</p>
+          <p>작성일 {{review.created_at}}, 수정일 {{review.updated_at}}</p>
           <hr>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -56,9 +57,13 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import ReviewPaginatedList from '@/components/ReviewPaginatedList.vue'
 
   export default {
     name: 'MovieDetailView',
+    components: {
+      ReviewPaginatedList
+    },
     data() {
       return {
         movieId: this.$route.params.movieId,
@@ -69,6 +74,14 @@ import { mapGetters, mapActions } from 'vuex'
       ...mapGetters(['isAuthor', 'movieDetail']),
       total_score: function() {
         return this.ratings * 2
+      },
+      reviews: function () {
+        if (this.movieDetail) {
+          return this.movieDetail.review_set
+        }
+        else {
+          return []
+        }
       }
     },
     methods: {
@@ -77,6 +90,10 @@ import { mapGetters, mapActions } from 'vuex'
     created() {
       this.$store.dispatch('movieDetail', this.movieId)
       this.$store.dispatch('setUrl', 'detail')
+      this.$store.dispatch('movieChoice', this.movieId)
+    },
+    beforeMount() {
+      this.$store.dispatch('movieChoice', this.movieId)
     }
   }
 </script>
@@ -186,5 +203,10 @@ import { mapGetters, mapActions } from 'vuex'
   display: none;
   }
 
+.community-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+  }
 
 </style>
