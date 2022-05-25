@@ -49,9 +49,6 @@ import CommentList from '@/components/CommentList.vue'
       this.$store.dispatch('setUrl', 'chain')
       this.fetchReview(this.reviewPk)
     },
-    updated() {
-      // this.fetchReview(this.reviewPk)
-    }
   }
 </script>
 

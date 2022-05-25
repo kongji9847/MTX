@@ -60,7 +60,7 @@ import { mapGetters, mapActions } from 'vuex'
     },
     created() {
       this.fetchReview(this.payload.reviewPk)
-    }
+    },
   }
 </script>
 

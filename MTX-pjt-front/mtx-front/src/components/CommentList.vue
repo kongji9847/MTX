@@ -2,9 +2,9 @@
   <div class="comment-list">
     <ul>
       <comment-list-item 
-        v-for="(comment, idx) in comments"
+        v-for="(comment) in comments"
         :comment="comment"
-        :key="idx">
+        :key="comment.pk" v-show="comment">
       </comment-list-item>
     </ul>
 
@@ -19,6 +19,9 @@ import CommentListForm from '@/components/CommentListForm.vue'
   export default {
     name: 'CommentList',
     components: { CommentListItem, CommentListForm },
+    computed: {
+      reviewPk: function () { return this.$route.params.reviewPk},
+    },
     props: { comments: Array },
   }
 </script>
