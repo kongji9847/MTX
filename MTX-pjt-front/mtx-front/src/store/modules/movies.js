@@ -84,7 +84,7 @@ export default {
     },
 
     // 영화 끝말잇기 next 로직
-    nextMovie({commit}, info) {
+    nextMovie({commit, state}, info) {
       const start_word = info.start_word
       const now_id = info.now_id
       axios({
@@ -99,7 +99,8 @@ export default {
         commit('SET_MOVIE', res.data)
       })
       .catch(error => {
-        alert(`'${start_word}'(으)로 시작하는 영화가 없습니다!`)
+        const num = state.movieList.length
+        alert(`'${start_word}'(으)로 시작하는 영화가 없습니다! 총 ${num}개의 영화를 연결했습니다!`)
         console.log(error)
       })
     },

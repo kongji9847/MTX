@@ -42,7 +42,7 @@
     margin: 0px;
     white-space: nowrap;
     overflow: hidden;
-    z-index: 5;
+    z-index: 6;
   }
 
 .items {

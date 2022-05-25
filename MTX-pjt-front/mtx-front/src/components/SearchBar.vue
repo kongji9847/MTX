@@ -37,8 +37,8 @@ import _ from 'lodash'
     },
     created() {
       const exList = [
-        '해리 포터', '닥터 스트레인지', '날씨의 아이', '범죄도시2', '리틀포레스트',
-      '스파이더맨', '크루엘라', '기생충', '타임 패러독스', '레미제라블']
+        '해리 포터', '닥터 스트레인지', '범죄도시', '범죄도시2', '리틀포레스트',
+      '업그레이드', '기생충', '타임 패러독스', '레미제라블', '메이즈 러너']
       // console.log(_.sampleSize(exList, 3))
       this.recommendWords =  _.sampleSize(exList, 3)
     },

@@ -18,6 +18,9 @@
               <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
             </div>
           </div>
+          <div>
+            <button @click="showHistory" class="btn btn-history mt-3">끝말잇기 history</button>
+          </div>
         </div>
         <div class="col-4 poster">
           <img :src="movie.poster_path" alt="movie.title" @click="goDetail" class="mt-4">
@@ -39,6 +42,9 @@
           </div>
         </div>
       </div>
+      <div class="row d-flex">
+        <word-history v-if="history" class="col"></word-history>
+      </div>
     </div>
     <div class="btn-position">
       <span class="material-symbols-outlined btn-right" @click="nextMovie(info)">
@@ -49,10 +55,20 @@
 </template>
 
 <script>
+
+import WordHistory from '@/components/WordHistory.vue'
 import { mapGetters, mapActions } from 'vuex'
 
   export default {
     name: 'WordChainView',
+    data() {
+      return {
+        history: false,
+      }
+    },
+    components: {
+      WordHistory
+    },
     computed: {
       ...mapGetters(['isAuthor', 'movie']),
       info: function () {
@@ -70,6 +86,10 @@ import { mapGetters, mapActions } from 'vuex'
           params: { movieId: this.movie.id},
         })
       },
+      showHistory: function () {
+        console.log(this.history)
+        this.history = !this.history
+      }
     },
     // word-chain url 상태에서 새로고침하면 출발 페이지로 넘어간다.
     created() {
@@ -82,9 +102,17 @@ import { mapGetters, mapActions } from 'vuex'
       }
     }
   }
+
 </script>
 
 <style scoped>
+
+.btn-history {
+  background-color: rgb(17, 32, 43);
+  font-weight: bold;
+  color: white;
+}
+
 .redBox {
   background-color: #9B2A2B;
   width: 9vw;
@@ -158,7 +186,9 @@ import { mapGetters, mapActions } from 'vuex'
 
 .poster > img:hover {
   cursor: pointer;
-  width: 100%;
+  /* background-color: rgba(3, 26, 42, 0.6); */
+  opacity: 0.85;
+  /* width: 100%; */
 }
 
 .titleFont {

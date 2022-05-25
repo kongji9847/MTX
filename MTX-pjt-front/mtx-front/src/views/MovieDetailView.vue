@@ -42,14 +42,8 @@
       </div>
       <hr>
       <div class="row">
-        <h1 class="h3 mb-3 text-gray-800 community-title">Review</h1>
+        <h1 class="h3 mb-3 text-gray-700 community-title">Review</h1>
         <review-paginated-list v-if="reviews" :reviews="reviews"></review-paginated-list>
-        <!-- <div v-for="(review, idx) in movieDetail.review_set" :key="idx">
-          <h3>제목 {{review.title}}</h3>
-          <p>내용 {{review.content}}</p>
-          <p>작성일 {{review.created_at}}, 수정일 {{review.updated_at}}</p>
-          <hr>
-        </div> -->
       </div>
     </div>
   </div>
@@ -214,8 +208,8 @@ import ReviewPaginatedList from '@/components/ReviewPaginatedList.vue'
 
 .community-title {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    font-size: 2.5rem;
+    font-weight: 580;
+    font-size: 2.2rem;
   }
 
 </style>
