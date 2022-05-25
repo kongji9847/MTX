@@ -19,7 +19,7 @@
     <hr>
     <comment-list :comments="review.comment_set"></comment-list>
     <router-link :to="{ name: 'reviews' }">
-      <button class="btn my-3 btn-secondary">목록으로</button>
+      <button class="btn my-3 btn-outline-secondary">목록으로</button>
     </router-link>
   </div>
 </template>
@@ -80,7 +80,7 @@ import CommentList from '@/components/CommentList.vue'
 
   .author-btn {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
   }
 
 </style>

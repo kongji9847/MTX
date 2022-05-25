@@ -74,7 +74,8 @@ export default {
         commit('REMOVE_MOVIEPK')
       })
       .catch(error => {
-        alert(error.response.data)
+        console.log(error.response)
+        alert('양식에 맞춰 다시 한 번 작성해주세요!')
       })
     },
 
