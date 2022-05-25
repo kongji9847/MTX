@@ -38,7 +38,7 @@ def movie_detail(request, movie_pk):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def review_list(request):
-    reviews = Review.objects.all()
+    reviews = Review.objects.order_by('-pk')
     serializer = ReviewSerializer(reviews, many=True)
     return Response(serializer.data)
 

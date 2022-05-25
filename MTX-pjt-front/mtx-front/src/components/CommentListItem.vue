@@ -10,10 +10,12 @@
     <div class="d-flex justify-content-between">
       <span v-if="!isEditing">{{ payload.content }}</span>
 
-      <span v-if="isEditing" class="col-md-12 d-flex justify-content-between">
-        <input type="text" v-model="payload.content" class="form-control">
-        <button @click="onUpdate" class="mx-3 btn update-btn btn-sm">Update</button>
-        <button @click="switchIsEditing" class="btn btn-outline-dark btn-sm">Cancel</button>
+      <span v-if="isEditing" class="d-flex justify-content-between">
+        <form class="col-md-12 d-flex justify-content-between">
+          <input type="text" v-model="payload.content" class="form-control">
+          <button @click="onUpdate" class="mx-3 btn update-btn btn-sm">Update</button>
+          <button @click="switchIsEditing" class="btn btn-outline-dark btn-sm">Cancel</button>
+        </form>
       </span>
 
       <span v-if="currentUser.username === comment.username && !isEditing">
@@ -45,7 +47,7 @@ import { mapGetters, mapActions } from 'vuex'
       ...mapGetters(['currentUser'])
     },
     methods: {
-      ...mapActions(['updateComment', 'deleteComment', 'fetchReviews']),
+      ...mapActions(['updateComment', 'deleteComment', 'fetchReview']),
       switchIsEditing() {
         this.isEditing = !this.isEditing
       },
@@ -56,6 +58,9 @@ import { mapGetters, mapActions } from 'vuex'
         }
       },
     },
+    created() {
+      this.fetchReview(this.payload.reviewPk)
+    }
   }
 </script>
 
