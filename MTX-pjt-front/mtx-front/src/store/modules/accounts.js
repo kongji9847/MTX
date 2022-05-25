@@ -115,7 +115,7 @@ export default {
         commit('SET_PROFILE', res.data)
       })
       .catch(err => {
-        if (err.response.statue === 404) {
+        if (err.response.status === 404) {
           router.push({ name: 'NotFound404' })
         }
       })

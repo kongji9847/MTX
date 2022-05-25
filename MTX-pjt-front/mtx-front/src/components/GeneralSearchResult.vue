@@ -59,11 +59,8 @@ export default {
   .results {
     height: 25vh;
     overflow-y: scroll;
+    scrollbar-width: thin;
     /* font-size: 1vw; */
-  }
-
-  ::-webkit-scrollbar {
-  display: none;
   }
 
 </style>
