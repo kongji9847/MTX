@@ -1,11 +1,11 @@
 <template>
   <div class="search-bar">
     <div class="searchContent">
-      <div class="guide mb-3">아무것도 입력하지 않으면 랜덤 영화로 출발해요!</div>
+      <div class="guide mb-3">&emsp;아무것도 입력하지 않으면 랜덤 영화로 출발해요!</div>
       <input v-model="word" @keyup.enter="inputSearch(last_word)" type="text" placeholder=" Search">
       <button @click="inputSearch(last_word)" class="mx-3">start</button>
       <div class="recommend">
-      <span v-for="(word) in recommendWords" :key="word" @click="recommendClick(word)">{{word}}</span>
+      &nbsp;<span v-for="(word) in recommendWords" :key="word" @click="recommendClick(word)">{{word}}</span>
       </div>
     </div>
   </div>
@@ -49,12 +49,12 @@ import _ from 'lodash'
   .search-bar {
     background-color: rgba(3, 26, 42, 0.6);
     position: relative;
-    height: 250px;
+    height: 290px;
   }
 
   .searchContent {
     position: absolute;
-    top: 50%;
+    top: 48%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
@@ -66,12 +66,12 @@ import _ from 'lodash'
     width: 15%;
     padding: 0.6rem;
     border: none;
-    border-radius: 7px;
+    border-radius: 8px;
     background-color: #F8D488;
     color: black;
     font-size: 2rem;
-    font-weight: bold;
-    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-family: 'SUIT';
     padding-left: 1rem;
     padding-right: 1rem;
   }
@@ -96,6 +96,8 @@ import _ from 'lodash'
   .guide {
     text-align: left;
     color: #F8D488;
+    font-family: 'SUIT';
+    font-size: 1.05rem;
   }
 
   .recommend > span {
