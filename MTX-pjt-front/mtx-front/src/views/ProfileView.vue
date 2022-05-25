@@ -23,12 +23,12 @@
             <div class="profile-card card shadow">
               <div class="card-body text-center">
                 <div class="mt-3 mb-4">
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                  <img :src="imgUrl"
                     class="rounded-circle img-fluid" style="width: 120px;" />
                 </div>
                 <h4 class="mb-2">{{ profile.username }}</h4>
-                <p class="text-muted mb-4">Lorem  <span class="mx-2">|</span> <a
-                    href="#!">ipsum</a></p>
+                <p class="text-muted mb-4">회원 등급  <span class="mx-2">|</span> 
+                    <span>{{ userGrade }}등급</span></p>
                 <div class="d-flex justify-content-between text-center mt-5 mb-2 mx-2">
                   <div>
                     <p class="mb-2 h5 user-review-count" @click="onClickReview">{{ profile.review_count }}</p>
@@ -71,17 +71,32 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import ReviewPaginatedList from '@/components/ReviewPaginatedList.vue'
+import _ from 'lodash'
 
   export default {
     name: 'ProfileView',
     data() {
       return {
-        showUserDetailInfo: 0
+        showUserDetailInfo: 0,
+        randomNum: _.random(1, 6),
+        grade: 5
       }
     },
     components: { ReviewPaginatedList },
     computed: {
-      ...mapGetters(['profile'])
+      ...mapGetters(['profile']),
+      imgUrl () {
+        return `https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava${this.randomNum}-bg.webp`
+      },
+      userGrade () {
+        if (this.profile.review_count > 50) {
+          return this.grade - 2
+        } else if (this.profile.review_count > 30) {
+          return this.grade - 1
+        } else {
+          return this.grade
+        }
+      }
     },
     methods: {
       ...mapActions(['fetchProfile']),
