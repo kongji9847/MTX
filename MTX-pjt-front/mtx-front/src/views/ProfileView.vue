@@ -95,6 +95,7 @@ import ReviewPaginatedList from '@/components/ReviewPaginatedList.vue'
     created() {
       const payload = { username: this.$route.params.username }
       this.fetchProfile(payload)
+      this.$store.dispatch('setUrl', 'chain')
     },
   }
 </script>
