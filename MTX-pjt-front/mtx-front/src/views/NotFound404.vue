@@ -1,24 +1,20 @@
 <template>
-  <div>
-    <div class="trainAnimation">
-      <div class="content">
-        <div class="buildings"></div>
-        <div class="windows"></div>
-        <div class="bridge"></div>
-        <div class="train">
-          <div class="carOne"></div>
-          <div class="carTwo"></div>
-          <div class="carThree"></div>
-        </div>
-        <div class="moon"></div>
-        <div class="stars"></div>
+  <div class="err-body">
+    <div class="container">
+      <div class="planet-content">
+        <div class="clouds"></div>
+        <div class="planet"></div>
+        <div class="earth-moon"></div>
+        <div class="up"></div>
       </div>
     </div>
-    <div class="body-404 col">
-      <h1>404</h1>
-      <button class="btn" @click="goToWordChain">돌아가기</button>
+    <div class="err-word">
+      <h1 class="err-code">404</h1>
+      <p class="my-4 sub-message">길을 잃은 것 같습니다..</p>
+      <button class="btn back-btn" @click="goToWordChain">돌아가기</button>
     </div>
   </div>
+
 </template>
 
 <script>
@@ -32,27 +28,47 @@
       },
     },
     created() {
-    this.$store.dispatch('setUrl', 'chain')
+    this.$store.dispatch('setUrl', 'home')
     }
   }
 </script>
 
-<style scoped>
-  @import "@/statics/home.css";
+<style src="@/statics/earth.css" scoped>
+  /* @import "@/statics/earth.css"; */
 
-  .btn {
+  /* .back-btn {
     background-color: #F8A111;
     color: white;
-    font-weight: bold;
-    margin: 1rem;
+    margin: 0.5rem;
+    font-family: 'NanumSquareAcb';
   }
 
-
-  .body-404 {
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    /* height: 100vh; */
+  .err-word {
+    text-align: center;
+    margin: 10px auto;
+    margin-top: 30px;
+    padding-top: 10px;
   }
+
+  .err-code {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    font-size: 8rem;
+    margin: 2rem 0 0.5rem;
+  }
+
+  .sub-message {
+    font-family: 'NanumSquareAcr';
+    font-size: 1.2rem;
+  }
+
+  body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  background-color: #072137;
+  } */
 
 </style>

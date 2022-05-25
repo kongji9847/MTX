@@ -45,12 +45,14 @@ export default {
 <style scoped>
   @import "@/statics/home.css";
 
-  .home{
+  /* .home{
     text-align: center;
     margin: 10px auto;
-  }
+  } */
 
   .home-body {
+    text-align: center;
+    margin: 10px auto;
     margin-top: 30px;
     padding-top: 10px;
   }

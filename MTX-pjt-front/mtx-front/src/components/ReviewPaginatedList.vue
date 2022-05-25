@@ -26,14 +26,16 @@
                           <td>
                             {{ review.id }}
                           </td>
-                          <td width="20%">
+                          <td class="td-movie-title">
                             <span class="review-movie-title">
-                              {{ review.movie_title }}
+                              <router-link :to="{ name: 'movie', params: { movieId: review.movie } }">
+                                {{ review.movie_title }}
+                              </router-link>
                             </span>
                           </td>
                           <td width="40%">
                             <span class="review-title">
-                              <router-link :to="{ name: 'review', params: {reviewPk: review.id } }">
+                              <router-link :to="{ name: 'review', params: { reviewPk: review.id } }">
                                 {{ review.title }}
                               </router-link>
                             </span>
@@ -132,17 +134,26 @@
     font-family: 'NanumSquareAcr';
   }
 
-  .review-movie-title {
+  .td-movie-title {
+    width: 230px;
+  }
+
+  .review-tr:hover {
+    background-color: #efefef;
+  }
+
+  .review-movie-title a {
     color: rgb(112, 112, 112);
+    text-decoration-line: none;
+  }
+
+  .review-movie-title a:hover {
+    color: #F8A111;
   }
 
   .review-title a {
     color: #041C2D ;
     text-decoration-line: none;
-  }
-
-  .review-tr:hover {
-    background-color: #efefef;
   }
 
   .review-title:hover {
