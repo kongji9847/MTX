@@ -1,0 +1,180 @@
+.container {
+  position: relative;
+}
+
+.planet-content {
+  position: relative;
+  margin: 10px auto;
+  width: 200px;
+  height: 200px;
+}
+
+.clouds {
+  position: absolute;
+  background-color: #041c2f;
+  width:200px;
+  height: 40px;
+  border-radius:50px;
+  top:-45px;
+  left:90px;
+  box-shadow: -140px 40px #072137,140px 40px #072137,20px 40px #041c2f, 20px 80px #041c2f, 180px 120px #072137, 20px 120px #041c2f, 70px 160px #041c2f, -180px 160px #041c2f, -290px 200px #072137,-10px 200px #072137,-120px 200px #041c2f, -140px 240px #041c2f;
+}
+
+.clouds:before {
+  content:"";
+  position:absolute;
+  width:7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.3);
+  top:-10px;
+  box-shadow: -100px 100px rgba(255,255,255,0.3), 130px 230px rgba(255,255,255,0.3), 50px 310px rgba(255,255,255,0.3), -130px 215px rgba(255,255,255,0.3);
+}
+
+.clouds:after {
+  content:"";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.2);
+  left:50px;
+  top:20px;
+  box-shadow: 100px 100px rgba(255,255,255,0.2), -100px 240px rgba(255,255,255,0.2);
+}
+
+.planet {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: #00a5cf;
+  border-radius:50%;
+  overflow:hidden;
+}
+
+.planet:before {
+  content:"";
+  position: absolute;
+  background-color: #368715;
+  width:100px;
+  height:25px;
+  border-radius:20px;
+  left:15px;
+  box-shadow:60px 25px #00a5cf,25px 25px #368715, -25px 25px #368715, 50px 50px #368715, -15px 50px #368715, 90px 75px #00a5cf,30px 75px #368715, -15px 75px #368715, -25px 0px #368715;
+  top:100px;
+}
+
+.planet:after {
+  content:"";
+  position: absolute;
+  width:200px;
+  height:200px;
+  border-radius: 50%;
+  top:0;
+  box-shadow: inset -10px 10px rgba(0,0,0,0.2);
+}
+.up {
+  position: absolute;
+  background-color: #00a5cf;
+  width:200px;
+  height:100px;
+  border-radius: 100px 100px 0 0;
+  top:0;
+  overflow:hidden;
+}
+
+.up:before {
+  content:"";
+  position: absolute;
+  background-color: #368715;
+  width:100px;
+  height:25px;
+  border-radius:20px;
+  left:-10px;
+  box-shadow:60px 25px #00a5cf,25px 25px #368715, -25px 25px #368715, 50px 50px #368715, -5px 50px #368715, 90px 75px #00a5cf,30px 75px #368715, -10px 75px #368715;
+}
+
+.up:after {
+  content:"";
+  position: absolute;
+  width:200px;
+  height:100px;
+  border-radius: 100px 100px 0 0;
+  top:0;
+  box-shadow: inset -10px 10px rgba(0,0,0,0.2);
+}
+
+.earth-moon {
+  position: absolute;
+  width:40px;
+  height:40px;
+  background-color: #d6d6d6;
+  box-shadow: inset -5px 5px rgba(0,0,0,0.2);
+  border-radius:50%;
+  top:-135px;
+  left:-175px;
+  overflow:hidden;
+  offset-path: path("M280.25,191c38.55,0,74.78,5.44,102,15.32C409.18,216.08,424,228.93,424,242.5s-14.82,26.42-41.74,36.18C355,288.56,318.8,294,280.25,294s-74.78-5.44-102-15.32c-26.91-9.76-41.74-22.61-41.74-36.18s14.83-26.42,41.74-36.18c27.24-9.88,63.47-15.32,102-15.32m0-1c-79.95,0-144.76,23.51-144.76,52.5S200.3,295,280.25,295,425,271.49,425,242.5,360.19,190,280.25,190Z");
+  animation: move 6s linear infinite;
+}
+
+.earth-moon:before, .earth-moon:after {
+  content:"";
+  position: absolute;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  box-shadow: inset 2px 2px rgba(0,0,0,0.2);
+  background-color: #e5e5e5;
+}
+
+.earth-moon:before {
+  top:5px;
+  left:25px;
+}
+
+.earth-moon:after {
+  top:35px;
+  left:10px;
+}
+
+@keyframes move {
+  to { 
+    offset-distance: 50%;
+  }
+}
+
+.back-btn {
+  background-color: #F8A111;
+  color: white;
+  margin: 0.5rem;
+  font-family: 'NanumSquareAcb';
+}
+
+.err-word {
+  text-align: center;
+  margin: 10px auto;
+  margin-top: 30px;
+  padding-top: 10px;
+}
+
+.err-code {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-size: 8rem;
+  margin: 2rem 0 0.5rem;
+}
+
+.sub-message {
+  font-family: 'NanumSquareAcr';
+  font-size: 1.2rem;
+}
+
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+flex-direction: column;
+background-color: #072137;
+}
