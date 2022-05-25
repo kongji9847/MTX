@@ -11,10 +11,10 @@
           </div>
           <div class="card-body">
               <div class="table-responsive">
-                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                      <thead>
+                  <table class="table" id="dataTable" width="100%" cellspacing="0">
+                      <thead class="table-bordered">
                           <tr>
-                              <th scope="col">id</th>
+                              <th scope="col">&nbsp;</th>
                               <th scope="col">영화</th>
                               <th scope="col">제목</th>
                               <th scope="col">작성자</th>
