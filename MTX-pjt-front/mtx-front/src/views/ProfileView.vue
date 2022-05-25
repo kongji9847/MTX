@@ -29,7 +29,7 @@
                 <h4 class="mb-2">{{ profile.username }}</h4>
                 <p class="text-muted mb-4">회원 등급  <span class="mx-2">|</span> 
                     <span>{{ userGrade }}등급</span></p>
-                <div class="d-flex justify-content-between text-center mt-5 mb-2 mx-2">
+                <div class="d-flex justify-content-between text-center mt-5 mb-2 mx-3">
                   <div>
                     <p class="mb-2 h5 user-review-count" @click="onClickReview">{{ profile.review_count }}</p>
                     <p class="text-muted mb-0">작성한 게시글</p>
