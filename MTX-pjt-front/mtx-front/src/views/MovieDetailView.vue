@@ -82,6 +82,9 @@ import ReviewPaginatedList from '@/components/ReviewPaginatedList.vue'
         else {
           return []
         }
+      },
+      movieTitle: function () {
+        return this.movieDetail.title
       }
     },
     methods: {
@@ -90,10 +93,10 @@ import ReviewPaginatedList from '@/components/ReviewPaginatedList.vue'
     created() {
       this.$store.dispatch('movieDetail', this.movieId)
       this.$store.dispatch('setUrl', 'detail')
-      this.$store.dispatch('movieChoice', this.movieId)
     },
-    beforeMount() {
-      this.$store.dispatch('movieChoice', this.movieId)
+    mounted() {
+      console.log(this.movieDetail.title)
+      this.$store.dispatch('movieChoice', {moviePk:this.movieId, movieTitle:this.movieTitle})
     }
   }
 </script>
@@ -104,6 +107,9 @@ import ReviewPaginatedList from '@/components/ReviewPaginatedList.vue'
   background-color: #9B2A2B;
   width: 9vw;
   height: 0.9vh;
+}
+.poster > img {
+  box-shadow: 0px 3px 10px 8px #878787;
 }
 
 .poster > .whiteCircle {

@@ -8,20 +8,26 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'GeneralSearchBar',
   data () {
     return {
-      keyword : ''
+      keyword : this.moviTitleToReview
     }
+  },
+  computed: {
+    ...mapGetters(['movieTitleToReview'])
   },
   methods: {
     ...mapActions(['movieSearch']),
     setNewSearch: function () {
       this.$store.dispatch('newSearch', false)
     }
-  }
+  },
+  // mounted() {
+  //   console.log(this.movieTitleToReview)
+  // }
 }
 </script>
 
@@ -30,6 +36,7 @@ export default {
   input {
     padding: 0.8rem;
     font-weight: bold;
+    /* box-shadow: 0.5px 0.5px 10px 0px black; */
   }
 
   .btn {
@@ -37,6 +44,9 @@ export default {
     color: white;
     background-color: #F8A111;
     font-weight: bold;
+    /* box-shadow: 0.5px 0.5px 10px 0px gray; */
   }
+
+
 
 </style>

@@ -91,6 +91,10 @@ import { mapGetters, mapActions } from 'vuex'
   height: 0.9vh;
 }
 
+.poster > img {
+  box-shadow: 0px 3px 10px 8px #878787;
+}
+
 .poster > .whiteCircle {
   background-color: white;
   width: 33vw;

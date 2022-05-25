@@ -9,12 +9,14 @@ export default {
     reviews: [],
     review: {},
     moviePk: null,
+    movieTitleToReview: null,
   },
 
   getters: {
     reviews: state => state.reviews,
     review: state => state.review,
     moviePk: state => state.moviePk,
+    movieTitleToReview: state => state.movieTitleToReview,
     isReview: state => !_.isEmpty(state.review),
     isAuthor: (state, getters) => {
       return state.review.user?.username === getters.currentUser.username
@@ -26,6 +28,7 @@ export default {
     SET_REVIEWS: (state, reviews) => state.reviews = reviews,
     SET_REVIEW: (state, review) => state.review = review,
     SET_MOVIEPK: (state, moviePk) => state.moviePk = moviePk,
+    SET_MOVIETITLE: (state, title) => state.movieTitleToReview = title,
     SET_REVIEW_COMMENTS: (state, comments) => (state.review.comment_set = comments),
     REMOVE_MOVIEPK: (state) => state.moviePk = null,
   },
@@ -111,8 +114,10 @@ export default {
       })
     },
 
-    movieChoice({ commit }, moviePk) {
+    movieChoice({ commit }, {moviePk, movieTitle}) {
+      // console.log(moviePk, movieTitle)
       commit('SET_MOVIEPK', moviePk)
+      commit('SET_MOVIETITLE', movieTitle)
     },
 
     createComment({ commit, getters }, { reviewPk, content }) {

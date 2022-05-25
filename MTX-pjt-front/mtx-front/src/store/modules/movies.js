@@ -144,6 +144,7 @@ export default {
       })
       .then(res => {
         commit('SET_MOVIE_RATE', res.data)
+        alert('평점이 반영되었습니다!')
       })
       .catch(error => {
         console.log(error)

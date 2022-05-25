@@ -101,7 +101,8 @@ class RateSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
     vote_average = serializers.FloatField(source="movie.vote_average", read_only=True)
     vote_count = serializers.IntegerField(source="movie.vote_count", read_only=True)
-    
+    poster_path = serializers.CharField(source="movie.poster_path", read_only=True)
+
     class Meta:
         model = Rate
         fields = '__all__'

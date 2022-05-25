@@ -85,6 +85,10 @@ img:hover {
   height: 300px;
 }
 
+/* img{
+  box-shadow: 0.5px 0.5px 1px 0px gray
+} */
+
 
 .modal-title {
   color: black;
