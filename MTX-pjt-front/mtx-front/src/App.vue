@@ -58,7 +58,7 @@ nav {
 nav a {
   color: white;
   /* font-family: 'Barlow Condensed', sans-serif; */
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'SUIT';
   font-weight: 300;
   text-align: center;
   text-decoration-line: none;
@@ -72,7 +72,7 @@ nav a:hover {
 nav a.router-link-exact-active {
   color: #F8D488;
   /* font-family: 'Barlow Condensed', sans-serif; */
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'SUIT';
   font-weight: 400;
   text-align: center;
   text-decoration-line: none;
@@ -110,5 +110,8 @@ nav a.router-link-exact-active {
   background-attachment: fixed;
 }
 
+body {
+  font-family: 'SUIT';
+}
 
 </style>

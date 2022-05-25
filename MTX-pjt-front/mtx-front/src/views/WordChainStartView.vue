@@ -21,13 +21,13 @@ import SearchBar from '@/components/SearchBar'
 <style scoped>
 .search-bar {
   text-align: center;
-  margin: 8% auto;
+  padding: 0 1rem;
+  margin: 5% auto;
 }
 h1 {
-  font-family: 'NanumSquareAceb';
-  /* font-weight: 700; */
-  font-size: 3.5rem;
-  /* font-family: 'Noto Sans KR', sans-serif; */
+  font-family: 'SUIT';
+  font-weight: 900;
+  font-size: 3.8rem;
 }
 
 </style>

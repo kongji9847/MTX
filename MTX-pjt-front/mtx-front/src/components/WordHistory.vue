@@ -2,7 +2,7 @@
   <div class="history-container d-flex">
     <div>
       <span v-for="(movie) in movieList" :key="movie.id">
-      <button class="btn yellow mt-2">{{movie.title}}</button><span class="material-symbols-outlined mx-1">
+      <button class="btn chained-movie mt-2">{{movie.title}}</button><span class="material-symbols-outlined mx-1">
 arrow_right_alt</span>
     </span>
     <button class="btn next mt-2">What's Next?</button>
@@ -23,7 +23,7 @@ export default {
 
 <style scoped>
 .history-container {
-  background-color: rgba(3, 26, 42, 0.6);
+  /* background-color: rgba(3, 26, 42, 0.6); */
   border-radius: 10px;
   width: 80vw;
   height: 20vh;
@@ -33,11 +33,12 @@ export default {
   overflow-y: scroll;
 }
 
-.yellow {
+.chained-movie {
   border: none;
-  background-color: rgb(3, 26, 42);
+  background-color: #041C2D;
   color:white;
   font-weight: bold;
+  margin: 0.5rem;
 }
 
 .yellow:hover{
@@ -50,13 +51,14 @@ export default {
   background-color: white;
   font-weight: bold;
   color: rgb(3, 26, 42);
+  margin: 0.5rem;
 }
 
 .material-symbols-outlined {
   position: relative;
   top: 1vh;
   font-weight: bold;
-  color: white;
+  color: grey;
 }
 
 </style>

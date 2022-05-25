@@ -136,7 +136,8 @@ import { mapGetters, mapActions } from 'vuex'
 
 .movie-title {
   white-space: normal;
-  font-family: 'NanumSquareBold';
+  /* font-family: 'NanumSquareBold'; */
+  font-weight: 500;
   word-break: keep-all;
   font-size: 2.3vw;
   /* font-weight: 700; */
