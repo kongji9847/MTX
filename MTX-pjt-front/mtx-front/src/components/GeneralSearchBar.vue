@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <input type="text" v-model="keyword" @keyup.enter="movieSearch(keyword)" placeholder="리뷰할 영화 제목을 검색하세요!">
-    <button class="btn btn-warning" @click="movieSearch(keyword)">검색</button>
+  <div class="searchContent row g-3 justify-content-center">
+    <div class="col-10 d-flex justify-content-between">
+      <input class="form-control" type="text" v-model="keyword" @keyup.enter="[movieSearch(keyword), setNewSearch()]" placeholder="영화 제목을 검색하세요!">
+      <button type="submit" class="btn mx-3" @click="[movieSearch(keyword), setNewSearch()]">Search</button>
+    </div>
   </div>
 </template>
 
@@ -15,14 +17,26 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['movieSearch'])
+    ...mapActions(['movieSearch']),
+    setNewSearch: function () {
+      this.$store.dispatch('newSearch', false)
+    }
   }
 }
 </script>
 
 <style scoped>
+
   input {
-    width: 80%;
+    padding: 0.8rem;
+    font-weight: bold;
+  }
+
+  .btn {
+    width: auto;
+    color: white;
+    background-color: #F8A111;
+    font-weight: bold;
   }
 
 </style>

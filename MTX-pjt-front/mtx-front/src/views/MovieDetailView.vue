@@ -104,7 +104,7 @@ import { mapGetters, mapActions } from 'vuex'
   white-space: normal;
   font-family: 'NanumSquareBold';
   word-break: keep-all;
-  font-size: 2.5vw;
+  font-size: 2.3vw;
   /* font-weight: 700; */
 }
 
@@ -181,6 +181,10 @@ import { mapGetters, mapActions } from 'vuex'
 .contextFont {
   font-size: 0.9vw;
 }
+
+::-webkit-scrollbar {
+  display: none;
+  }
 
 
 </style>

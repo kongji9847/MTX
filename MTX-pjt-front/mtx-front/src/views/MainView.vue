@@ -1,8 +1,8 @@
 <template>
   <div>
     <general-search-bar></general-search-bar>
-    <search-results v-if="searchResults" class="my-5"></search-results>
-    <h2 class="mb-4">현재 상영작</h2>
+    <general-search-result v-show="searchResults.length > 0" class="my-5"></general-search-result>
+    <h2 class="mb-4 mt-5">현재 상영작</h2>
     <movie-list :movies="nowPlayingMovies" class="mb-5"></movie-list>
     <h2 class="my-4">개봉 예정작</h2>
     <movie-list :movies="upComingMovies" class="mb-5"></movie-list>
@@ -18,12 +18,12 @@
 <script>
 import {mapGetters, mapActions} from 'vuex'
 import GeneralSearchBar from '@/components/GeneralSearchBar.vue'
-import SearchResults from '@/components/SearchResults.vue'
+import GeneralSearchResult from '@/components/GeneralSearchResult.vue'
 import MovieList from  '@/components/MovieList.vue'
 
 export default {
   name: 'MainView',
-  components: {GeneralSearchBar, SearchResults, MovieList},
+  components: {GeneralSearchBar, GeneralSearchResult, MovieList},
   computed: {
       ...mapGetters(['searchResults', 'topRatedMovies', 'nowPlayingMovies', 'upComingMovies', 'similarMovies'])
     },

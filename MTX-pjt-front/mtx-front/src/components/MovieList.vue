@@ -1,6 +1,6 @@
 <template>
   <div>
-    <carousel :autoplay="true" :nav="false" :dots="false" :items="5" :margin="30" :autoplayTimeout="3000">
+    <carousel :autoplay="true" :nav="false" :dots="false" :items="6" :margin="30" :autoplayTimeout="3000">
       <img :src="'https://image.tmdb.org/t/p/w500/'+`${poster_paths[0]}`" height=350px width=auto class="mx-4" @click="nowMovieListener(0)" data-bs-toggle="modal" data-bs-target="#exampleModal">
       <img :src="'https://image.tmdb.org/t/p/w500/'+`${poster_paths[1]}`" height=350px width=auto class="mx-4" @click="nowMovieListener(1)" data-bs-toggle="modal" data-bs-target="#exampleModal">
       <img :src="'https://image.tmdb.org/t/p/w500/'+`${poster_paths[2]}`" height=350px width=auto class="mx-4" @click="nowMovieListener(2)" data-bs-toggle="modal" data-bs-target="#exampleModal">

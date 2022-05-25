@@ -14,6 +14,7 @@ export default {
     movieDetail: {},
     // 검색 결과
     searchResults: [],
+    newSearch: false,
     topMovieId: 453395,
   },
 
@@ -22,6 +23,7 @@ export default {
     movie: state => state.movie,
     movieDetail: state => state.movieDetail,
     searchResults: state => state.searchResults,
+    newSearch: state => state.newSearch,
   },
 
   mutations: {
@@ -49,6 +51,9 @@ export default {
     REMOVE_SEARCH_RESULT: (state) => {
       state.searchResults = []
       state.moviePk = null
+    },
+    NEW_SEARCH: (state, result) => {
+      state.newSearch = result 
     }
   },
 
@@ -172,6 +177,10 @@ export default {
     
     removeSearchHistory({commit}) {
       commit('REMOVE_SEARCH_RESULT')
+    },
+
+    newSearch({commit}, result) {
+      commit('NEW_SEARCH', result)
     }
   },
 }
