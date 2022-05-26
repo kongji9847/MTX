@@ -12,9 +12,13 @@
 
 
 
-## Team (팀이름)
 
-팀원 정보 및 업무 분담 내역
+
+## Team (방학더조, MVVM: More Vacation Very Much)
+
+![image-20220526225959344](README.assets/image-20220526225959344.png)
+
+
 
 
 
@@ -45,6 +49,8 @@
 | Community    | 댓글 작성/수정/삭제             | 리뷰 디테일 페이지에서 댓글 1)작성 2)수정/삭제 가능          | user / author(2, 3) |
 | Admin        | DB 조작                         | `django admin`을 사용해 영화, 유저, 리뷰 및 댓글의 정보 관리 | admin               |
 | 404          | 404 NotFound                    | 등록되지 않은 url로 접근 시 404 페이지 반환                  | all                 |
+
+
 
 
 
@@ -189,5 +195,7 @@
 ## 느낀점
 
 ### 🍦 홍지
+
+
 
 ### 🍏 진아
