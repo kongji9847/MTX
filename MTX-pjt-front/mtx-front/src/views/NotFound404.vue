@@ -28,7 +28,7 @@
       },
     },
     created() {
-    this.$store.dispatch('setUrl', 'home')
+    this.$store.dispatch('setUrl', 'notFound')
     }
   }
 </script>

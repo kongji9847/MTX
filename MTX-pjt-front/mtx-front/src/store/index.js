@@ -14,10 +14,11 @@ export default new Vuex.Store({
     nowUrl : null,
   },
   getters: {
-    homeUrl : (state) => {return (state.nowUrl === 'home') ? 0 : 1},
+    homeUrl : (state) => {return (state.nowUrl === 'home') ? 1 : 0},
     mainUrl : (state) => {return (state.nowUrl === 'main') ? 1 : 0},
     chainStartUrl : state => {return (state.nowUrl === 'chainStart') ? 1 : 0},
-    chainUrl: state => {return (state.nowUrl === 'chain' || state.nowUrl === 'detail') ? 1 : 0 }
+    chainUrl: state => {return (state.nowUrl === 'chain' || state.nowUrl === 'detail') ? 1 : 0 },
+    notFoundUrl: state => {return (state.nowUrl === 'notFound') ? 1 : 0}
   },
   mutations: {
     SET_URL : (state, nowUrl) => {

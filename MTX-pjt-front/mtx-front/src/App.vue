@@ -1,11 +1,11 @@
 <template>
   <div id="app" 
-  :class="{ homeView: homeUrl===0, 
+  :class="{ homeView: homeUrl===1, 
   mainView : mainUrl === 1, movieChainStart: chainStartUrl===1, 
-  movieChain: chainUrl===1}">
+  movieChain: chainUrl===1, notFoundView: notFoundUrl===1}">
   
     <main-nav-bar></main-nav-bar>
-    <nav-bar v-show="homeUrl"></nav-bar>
+    <nav-bar v-if="homeUrl===0"></nav-bar>
     <div class="componentView mt-5">
       <router-view></router-view>
     </div>
@@ -15,14 +15,15 @@
 <script>
 import NavBar from '@/components/NavBar.vue'
 
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions, mapGetters, mapState } from 'vuex'
 import MainNavBar from './components/MainNavBar.vue'
 
   export default {
     name: 'App',
     components: { MainNavBar, NavBar },
     computed: {
-      ...mapGetters(['homeUrl', 'chainStartUrl', 'chainUrl', 'mainUrl']),
+      ...mapState(['nowUrl']),
+      ...mapGetters(['homeUrl', 'chainStartUrl', 'chainUrl', 'mainUrl', 'notFoundUrl']),
     },
     methods: {
       ...mapActions(['fetchCurrentUser'])
@@ -80,6 +81,13 @@ nav a.router-link-exact-active {
 
 
 .homeView {
+    background-color: #031A2A;
+    color: white;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .notFoundView {
     background-color: #031A2A;
     color: white;
     background-size: cover;
