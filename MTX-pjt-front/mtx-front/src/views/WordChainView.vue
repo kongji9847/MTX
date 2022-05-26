@@ -19,7 +19,7 @@
             </div>
           </div>
           <div>
-            <button @click="showHistory" class="btn btn-history mt-3">끝말잇기 history</button>
+            <button @click="showHistory" class="btn mt-3 btn-history" :class="{ history : isActive}">끝말잇기 history</button>
           </div>
         </div>
         <div class="col-4 poster">
@@ -64,6 +64,7 @@ import { mapGetters, mapActions } from 'vuex'
     data() {
       return {
         history: false,
+        isActive: false,
       }
     },
     components: {
@@ -88,6 +89,7 @@ import { mapGetters, mapActions } from 'vuex'
       },
       showHistory: function () {
         console.log(this.history)
+        this.isActive = !this.isActive
         this.history = !this.history
       }
     },
@@ -108,6 +110,19 @@ import { mapGetters, mapActions } from 'vuex'
 <style scoped>
 
 .btn-history {
+  border: solid;
+  border-color: rgb(17, 32, 43);
+  border-width: 1.5px;
+  font-weight: bold;
+}
+
+.btn-history:hover {
+  background-color: rgb(17, 32, 43);
+  font-weight: bold;
+  color: white;
+}
+
+.history {
   background-color: rgb(17, 32, 43);
   font-weight: bold;
   color: white;
