@@ -113,22 +113,27 @@ router.beforeEach((to, from, next) => {
 
   const { isLoggedIn } = store.getters
 
-  const noAuthPages = ['login', 'signup', 'home', 'wordChainStart', 'wordChain', 'movie']
+  const noAuthPages = ['login', 'signup', 'home', 'wordChainStart', 'wordChain', 'movie', 'main', 'NotFound404',]
   
   const isAuthRequired = !noAuthPages.includes(to.name)
   // console.log(from.name)
 
   if (isAuthRequired && !isLoggedIn) {
-    alert('로그인 필요합니다. 로그인 페이지로 이동중..')
+    alert('로그인 필요합니다. 로그인 페이지로 이동합니다.')
     next({ name: 'login' })
   } else {
     next()
   }
+  
+  const isAuthorRequired = ['reviewEdit']
 
-  // if (!isAuthRequired && isLoggedIn) {
-  //   // next({ name: 'wordChainStart' })
-  //   next()
-  // }
+  if (isAuthorRequired && !store.getters.isAuthor) {
+    console.log(store.getters.isAuthor)
+    alert('작성자가 아닙니다')
+    next({ name: 'reviews' })
+  } else {
+    next()
+  }
 })
 
 export default router
