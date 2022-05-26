@@ -178,7 +178,7 @@ export default {
       })
       .catch(err => {
         console.log(err.response)
-        alert(err.response.data.error_message)
+        alert('검색 결과가 없습니다!')
       })
     },
     

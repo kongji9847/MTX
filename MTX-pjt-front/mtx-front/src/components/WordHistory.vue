@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     comment: function () {
-      alert(`혹시 '${this.movie.last_word}'(으)로 시작하는 영화 제목을 알고 계신다면 https://github.com/kongji9847/MTX으로 알려주세요!  감사합니다😄`)
+      alert(`혹시 '${this.movie.last_word}'(으)로 시작하는 영화 제목을 알고 계신다면 https://github.com/kongji9847/MTX으로 알려주세요! 감사합니다😄`)
     }
   }
 }
