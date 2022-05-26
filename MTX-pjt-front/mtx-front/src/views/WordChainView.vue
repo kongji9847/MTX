@@ -63,8 +63,8 @@ import { mapGetters, mapActions } from 'vuex'
     name: 'WordChainView',
     data() {
       return {
-        history: false,
-        isActive: false,
+        history: true,
+        isActive: true,
       }
     },
     components: {

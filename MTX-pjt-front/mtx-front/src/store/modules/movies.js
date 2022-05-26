@@ -100,7 +100,7 @@ export default {
       })
       .catch(error => {
         const num = state.movieList.length
-        alert(`'${start_word}'(으)로 시작하는 영화가 없습니다! 총 ${num}개의 영화를 연결했습니다! history의 What's Next 버튼을 눌러주세요😃`)
+        alert(`'${start_word}'(으)로 시작하는 영화가 없습니다! 총 ${num}개의 영화를 연결했습니다! What's Next 버튼을 눌러주세요😃`)
         console.log(error)
       })
     },
