@@ -124,16 +124,4 @@ router.beforeEach((to, from, next) => {
   } else {
     next()
   }
-  
-  const isAuthorRequired = ['reviewEdit']
-
-  if (isAuthorRequired && !store.getters.isAuthor) {
-    console.log(store.getters.isAuthor)
-    alert('작성자가 아닙니다')
-    next({ name: 'reviews' })
-  } else {
-    next()
-  }
 })
-
-export default router
