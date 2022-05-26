@@ -3,7 +3,7 @@
     <div class="searchContent">
       <div class="guide mb-3">&emsp;아무것도 입력하지 않으면 랜덤 영화로 출발해요!</div>
       <input v-model="word" @keyup.enter="inputSearch(last_word)" type="text" placeholder=" Search">
-      <button @click="inputSearch(last_word)" class="mx-3">start</button>
+      <button @click="[inputSearch(last_word), movieChoice({moviePk:null, movieTitle:''})]" class="mx-3">start</button>
       <div class="recommend">
       &nbsp;<span v-for="(word) in recommendWords" :key="word" @click="recommendClick(word)">{{word}}</span>
       </div>
@@ -30,7 +30,7 @@ import _ from 'lodash'
       },
     },
     methods: {
-      ...mapActions(['inputSearch']),
+      ...mapActions(['inputSearch', 'movieChoice']),
       recommendClick(word) {
         this.word = word
       }

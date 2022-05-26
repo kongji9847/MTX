@@ -91,6 +91,7 @@ import ReviewPaginatedList from '@/components/ReviewPaginatedList.vue'
     mounted() {
       console.log(this.movieDetail.title)
       this.$store.dispatch('movieChoice', {moviePk:this.movieId, movieTitle:this.movieTitle})
+      this.$store.dispatch('setMOVIECHOICEDTOREVIEW', true)
     }
   }
 </script>

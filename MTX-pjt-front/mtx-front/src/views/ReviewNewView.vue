@@ -1,6 +1,6 @@
 <template>
   <div>
-    <general-search-bar></general-search-bar>
+    <general-search-bar v-show="isMovieChoicedToReview===false"></general-search-bar>
     <search-results v-show="searchResults.length > 0" class="my-5"></search-results>
     <review-form :review="review" action="create" class="mt-5"></review-form>
   </div>
@@ -25,7 +25,7 @@ import {mapGetters, mapActions} from 'vuex'
       }
     },
     computed: {
-      ...mapGetters(['searchResults', 'moviePk'])
+      ...mapGetters(['searchResults', 'moviePk','isMovieChoicedToReview' ])
     },
     methods: {
       ...mapActions(['removeSearchHistory'])

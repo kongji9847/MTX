@@ -78,7 +78,11 @@ export default {
       })
       .catch(error => {
         console.log(error.response)
-        alert('양식에 맞춰 다시 한 번 작성해주세요!')
+        if (error.response.status === 404) {
+          alert('리뷰를 작성할 영화를 선택해주세요!')
+        } else {
+          alert('양식에 맞춰 다시 한 번 작성해주세요!')
+        }
       })
     },
 

@@ -43,6 +43,8 @@ import ReviewPaginatedList from '@/components/ReviewPaginatedList.vue'
     created() {
       this.$store.dispatch('setUrl', 'chain')
       this.fetchReviews()
+      this.$store.dispatch('movieChoice', {moviePk:null, movieTitle:''})
+      this.$store.dispatch('setMOVIECHOICEDTOREVIEW', false)
     },
   }
 </script>
