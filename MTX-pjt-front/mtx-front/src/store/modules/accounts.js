@@ -79,8 +79,8 @@ export default {
       })
       .then(() => {
         dispatch('removeToken')
-        alert('logout 되었습니다')
-        router.push({ name: 'login' })
+        // alert('logout 되었습니다')
+        router.push({ name: 'home' })
       })
       // 에러 발생 시 어떻게 할 지 고민해야 함
       .catch(err => {
