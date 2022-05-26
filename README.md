@@ -16,7 +16,7 @@
 
 ## Team (방학더조, MVVM: More Vacation Very Much)
 
-![image-20220526225959344](README.assets/image-20220526225959344.png)
+![image-20220526231711791](README.assets/image-20220526231711791.png)
 
 
 
@@ -154,9 +154,7 @@
 
 #### ❗ 커뮤니티 이용은 로그인한 user만 가능하다.
 
-커뮤니티 목록 사진 및 리뷰 작성 사진
-
-
+![image-20220526231531918](README.assets/image-20220526231531918.png)
 
 
 
@@ -169,9 +167,7 @@
 
 
 
-리뷰 디테일 페이지
-
-
+![image-20220526231540100](README.assets/image-20220526231540100.png)
 
 
 
