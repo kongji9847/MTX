@@ -46,7 +46,7 @@ export default {
   margin: 0.5rem;
 }
 
-.yellow:hover{
+.chained-movie:hover{
   /* border: none; */
   cursor: default;
 }

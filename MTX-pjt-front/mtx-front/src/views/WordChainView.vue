@@ -117,6 +117,9 @@ import { mapGetters, mapActions } from 'vuex'
 }
 
 .btn-history:hover {
+  border: solid;
+  border-color: white;
+  border-width: 1.5px;
   background-color: rgb(17, 32, 43);
   font-weight: bold;
   color: white;
