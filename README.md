@@ -4,6 +4,44 @@
 
 
 
+## 목차
+
+[Description](#description)
+
+[Team](#team-방학더조-mvvm-more-vacation-very-much)
+
+[🎨 Tech Stack](#-tech-stack)
+
+[✨ Service features](#-service-features)
+
+[🎬 영화 추천 알고리즘 소개](#-영화-추천-알고리즘-소개)
+
+​	[영화 제목 끝말 잇기](#영화-제목-끝말-잇기)
+
+[🦩 데이터 베이스 모델링 (ERD)](#-데이터-베이스-모델링-erd)
+
+[🔎 Overview](#-overview)
+
+​	[1) Home](#1-home)	
+
+​	[2) Account / Profile](#2-account--profile)
+
+​	[3) Movie Train ⭐](#3-movie-train-)
+
+​	[4) Movie Detail](#4-movie-detail)
+
+​	[5) Community](#5-community)
+
+​	[6) Admin](#6-admin)
+
+[🎁 느낀점](#-느낀점)
+
+​	[🍏 홍지](#-홍지)
+
+​	[🍏 진아](#-진아)
+
+
+
 ## Description
 
 > **영화 제목을 끝말잇기로 연속해서 보여주며, 사용자에게 영화를 추천하는 서비스입니다.**
@@ -30,7 +68,7 @@
 
 
 
-## ✨ Servive features
+## ✨ Service features
 
 | type         | service(goal)                   | description(실제 구현 내용)                                  | access              |
 | ------------ | ------------------------------- | ------------------------------------------------------------ | ------------------- |
@@ -138,7 +176,7 @@
 
 
 
-### 5) Movie Detail
+### 4) Movie Detail
 
 ![image-20220526215927647](README.assets/image-20220526215927647.png)
 
@@ -150,7 +188,7 @@
 
 
 
-### 6) Community
+### 5) Community
 
 #### ❗ 커뮤니티 이용은 로그인한 user만 가능하다.
 
@@ -178,7 +216,7 @@
 
 
 
-### 7) Admin
+### 6) Admin
 
 ![image-20220526221540590](README.assets/image-20220526221540590.png)
 
