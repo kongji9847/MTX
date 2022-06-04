@@ -16,29 +16,23 @@
 
 [🎬 영화 추천 알고리즘 소개](#-영화-추천-알고리즘-소개)
 
-​	[영화 제목 끝말 잇기](#영화-제목-끝말-잇기)
+- [영화 제목 끝말 잇기](#영화-제목-끝말-잇기)
 
 [🦩 데이터 베이스 모델링 (ERD)](#-데이터-베이스-모델링-erd)
 
 [🔎 Overview](#-overview)
 
-​	[1) Home](#1-home)	
-
-​	[2) Account / Profile](#2-account--profile)
-
-​	[3) Movie Train ⭐](#3-movie-train-)
-
-​	[4) Movie Detail](#4-movie-detail)
-
-​	[5) Community](#5-community)
-
-​	[6) Admin](#6-admin)
+- [1) Home](#1-home)	
+- [2) Account / Profile](#2-account--profile)
+- [3) Movie Train ⭐](#3-movie-train-)
+- [4) Movie Detail](#4-movie-detail)
+- [5) Community](#5-community)
+- [6) Admin](#6-admin)
 
 [🎁 느낀점](#-느낀점)
 
-​	[🍏 홍지](#-홍지)
-
-​	[🍏 진아](#-진아)
+- [🍏 홍지](#-홍지)
+- [🍏 진아](#-진아)
 
 
 
