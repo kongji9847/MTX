@@ -58,7 +58,6 @@ export default {
   }
 
   h1 {
-    /* font-family: 'Permanent Marker', cursive; */
     font-family: 'Masque', sans-serif;
     margin: 1rem auto;
   }

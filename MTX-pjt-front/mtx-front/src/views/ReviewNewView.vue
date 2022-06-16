@@ -31,7 +31,6 @@ import {mapGetters, mapActions} from 'vuex'
       ...mapActions(['removeSearchHistory'])
     },
     created() {
-      // console.log(this.moviePk)
       this.$store.dispatch('removeSearchHistory')
       this.$store.dispatch('setUrl', 'chain')
     },

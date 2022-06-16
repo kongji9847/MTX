@@ -50,14 +50,12 @@ export default {
   }
 
   .MTX {
-    /* font-family: 'Permanent Marker', cursive; */
     font-family: 'Masque', sans-serif;
   }
 
   h5 {
     padding: 0 10px;
     display: inline-block;
-    /* font-family: 'Barlow Condensed', sans-serif; */
     font-family: 'Open Sans', sans-serif;
     text-decoration-line: none;
   }

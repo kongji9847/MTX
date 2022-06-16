@@ -1,20 +1,5 @@
 <template>
   <div>
-    <!-- <h1>{{ profile.username }}</h1>
-
-    <h2>작성한 리뷰</h2>
-    <ul>
-      <li v-for="review in profile.review_set" :key="review.pk">
-        <router-link :to="{ name: 'review', params: { reviewPk: review.id } }">
-          {{ review.title }}
-        </router-link>
-      </li>
-      리뷰 개수: {{ profile.review_count }}
-      댓글 개수: {{ profile.comment_count }}
-      평가한 영화 목록: {{ profile.rate_set }}
-      평가한 영화 수: {{ profile.movie_count }}
-    </ul> -->
-    <!-- ---------------------------------------------------------- -->
     <section>
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">

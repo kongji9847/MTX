@@ -1,30 +1,6 @@
 <template>
   <div>
-    <!-- <h1 class="login-title">Login</h1> -->
     <br>
-    <!-- <account-error-list v-if="authError"></account-error-list> -->
-    <!-- ----------------------------------------- -->
-    <!-- <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-sl-10 col-lg-12 col-md-9">
-          <div class="text-center">
-            <h1 class="h3 text-gray-900 mb-4">Welcome Back!</h1>
-          </div>
-          <form @submit.prevent="login(credentials)">
-            <div class="mb-3">
-              <label for="usernameInput" class="form-label">Username</label>
-              <input v-model="credentials.username" type="text" class="form-control" id="usernameInput" required />
-            </div>
-            <div class="mb-3">
-              <label for="passwordInput" class="form-label">Password</label>
-              <input v-model="credentials.password" type="password" class="form-control" id="passwordInput" required />
-            </div>
-            <button type="submit" class="btn btn-primary">Login</button>
-          </form>
-        </div>
-      </div>
-    </div> -->
-    <!-- ----------------------------------------- -->
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-xl-10 col-lg-12 col-md-9">

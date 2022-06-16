@@ -354,3 +354,5 @@ $RECYCLE.BIN/
 secrets.json
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,venv,python,django,visualstudiocode
+
+to_do_list.md

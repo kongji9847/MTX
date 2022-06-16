@@ -36,10 +36,8 @@ import MainNavBar from './components/MainNavBar.vue'
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200&family=Permanent+Marker&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Open+Sans:wght@300;400&display=swap');
-/* @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css'); */
 
 #app {
   width: 100%;
@@ -58,7 +56,6 @@ nav {
 
 nav a {
   color: white;
-  /* font-family: 'Barlow Condensed', sans-serif; */
   font-family: 'SUIT';
   font-weight: 300;
   text-align: center;
@@ -72,7 +69,6 @@ nav a:hover {
 
 nav a.router-link-exact-active {
   color: #F8D488;
-  /* font-family: 'Barlow Condensed', sans-serif; */
   font-family: 'SUIT';
   font-weight: 400;
   text-align: center;

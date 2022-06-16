@@ -1,10 +1,5 @@
 <template>
   <div>
-    <!-- <form @submit.prevent="onSubmit" class="comment-list-form">
-      <label for="comment">comment</label>
-      <input type="text" id="comment" v-model="content" required>
-      <button>Comment</button>
-    </form> -->
     <form @submit.prevent="onSubmit" class="row g-3 align-items-center">
       <div class="col-auto">
         <label for="inputComment" class="col-form-label">댓글</label>

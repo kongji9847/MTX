@@ -154,11 +154,9 @@ import { mapGetters, mapActions } from 'vuex'
 
 .movie-title {
   white-space: normal;
-  /* font-family: 'NanumSquareBold'; */
   font-weight: 500;
   word-break: keep-all;
   font-size: 2.3vw;
-  /* font-weight: 700; */
 }
 
 .star-ratings {
@@ -230,7 +228,6 @@ import { mapGetters, mapActions } from 'vuex'
 .overviewBox {
   position: relative;
   z-index: 4;
-  /* font-family: 'NanumSquareLight'; */
 }
 
 .material-symbols-outlined {

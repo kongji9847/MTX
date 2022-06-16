@@ -120,11 +120,9 @@ import ReviewPaginatedList from '@/components/ReviewPaginatedList.vue'
 
 .movie-title {
   white-space: normal;
-  /* font-family: 'NanumSquareBold'; */
   font-weight: 500;
   word-break: keep-all;
   font-size: 2.3vw;
-  /* font-weight: 700; */
 }
 
 .star-rating {
@@ -138,19 +136,19 @@ import ReviewPaginatedList from '@/components/ReviewPaginatedList.vue'
   position: relative;
   padding-left: 0px;
 }
- 
+
 .star-rating input {
   display: none;
 }
- 
+
 .star-rating label {
   cursor: pointer;
 }
- 
+
 .star-rating :checked ~ label {
   -webkit-text-fill-color: #F7d489;
 }
- 
+
 .star-rating label:hover,
 .star-rating label:hover ~ label {
   -webkit-text-fill-color: gold;
@@ -199,7 +197,6 @@ import ReviewPaginatedList from '@/components/ReviewPaginatedList.vue'
 .overviewBox {
   position: relative;
   z-index: 4;
-  /* font-family: 'NanumSquareLight'; */
 }
 
 

@@ -1,10 +1,6 @@
 <template>
   <div>
     <div class="container-fluid">
-
-      <!-- Page Heading -->
-      <!-- <h1 class="h3 mb-3 text-gray-800 community-title">Community</h1> -->
-      <!-- DataTales Example -->
       <div class="card shadow mb-4">
           <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold">영화 잡담 게시판</h6>
@@ -46,8 +42,6 @@
                           <td>
                             <span class="review-author">
                               {{ review.user.username }}
-                              <!-- <router-link :to="{ name: 'profile', params: {username: review.user.username } }">
-                              </router-link> -->
                             </span>
                           </td>
                           <td>

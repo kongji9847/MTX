@@ -3,17 +3,6 @@
     <div class="card shadow mb-4">
       <div class="card-header py-3">
         <form @submit.prevent="onSubmit">
-          <!-- <div>
-            <label for="title">title: </label>
-            <input v-model="newReview.title" type="text" id="title" />
-          </div>
-          <div>
-            <label for="content">content: </label>
-            <input v-model="newReview.content" type="text" id="content">
-          </div>
-          <div>
-            <button>{{ action }}</button>
-          </div> -->
           <div class="mb-3">
             <label for="reviewTitle" class="form-label">제목</label>
               <input v-model="newReview.title" type="text" class="form-control" id="reviewTitle">
